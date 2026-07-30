@@ -1,0 +1,74 @@
+{
+  "_comment": "Tuning knobs for the weekly grab. Edit this file instead of the script when the focus shifts.",
+
+  "trending_languages": [
+    "",
+    "python",
+    "typescript",
+    "jupyter-notebook",
+    "rust",
+    "go"
+  ],
+
+  "search_topics": [
+    "llm",
+    "ai-agent",
+    "agents",
+    "agent",
+    "mcp",
+    "llm-agent",
+    "agent-skills",
+    "rag",
+    "llmops"
+  ],
+
+  "keywords": {
+    "agent": 3,
+    "agents": 3,
+    "agentic": 3,
+    "llm": 3,
+    "mcp": 3,
+    "claude": 3,
+    "skills": 2,
+    "agent skill": 4,
+    "multi-agent": 3,
+    "rag": 2,
+    "prompt": 2,
+    "openai": 2,
+    "gpt": 2,
+    "gemini": 2,
+    "anthropic": 3,
+    "inference": 2,
+    "fine-tuning": 2,
+    "finetuning": 2,
+    "embedding": 1,
+    "vector database": 2,
+    "transformer": 1,
+    "ai": 1,
+    "chatbot": 1,
+    "copilot": 2,
+    "coding agent": 4,
+    "context engineering": 3,
+    "tool use": 2,
+    "function calling": 2,
+    "vllm": 2,
+    "diffusion": 1,
+    "open-source model": 2
+  },
+
+  "min_score": 3,
+
+  "exclude_patterns": [
+    "^awesome-",
+    "-awesome$",
+    "interview",
+    "leetcode",
+    "roadmap",
+    "free-programming-books",
+    "cheatsheet",
+    "system-design-primer",
+    "build-your-own"
+  ],
+
+  "min_stars": 200
+}
