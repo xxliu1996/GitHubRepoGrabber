@@ -69,10 +69,25 @@ curl -s -H "User-Agent: Mozilla/5.0" "https://github.com/trending?since=weekly" 
 
 ## 云端定时任务
 
-计划用 Claude cloud routine 每周一次触发 `/github-weekly`。踩过的坑（来自 `TwinCitiesEventNotification`）：
+已配置 Claude cloud routine，每周触发一次。
 
-- **网络白名单**：cloud sandbox 的出网走域名白名单，必须放行 `github.com` 和 `api.github.com`。
-- **推送凭据**：sandbox 默认的 git credential proxy 对新仓库没有写权限，需要在 routine 的 push 步骤里用 fine-grained PAT（Contents: read/write，只授权这一个仓库）。
-- **建议在 routine 里注入 `GITHUB_TOKEN`**，否则匿名配额会让富化步骤频繁退避，整轮变慢。
+- **Routine**：`GitHub LLM/Agent 周报`（`trig_01D8VqbrydAm7touznNTGSuH`）
+- **管理页**：https://claude.ai/code/routines/trig_01D8VqbrydAm7touznNTGSuH
+- **cron**：`0 3 * * 0`（UTC 周日 03:00）= **周六 22:00 America/Chicago**
+- **remote**：https://github.com/xxliu1996/GitHubRepoGrabber
 
-> 目前尚未创建 routine，也还没配置 remote。要走云端定时，得先在 GitHub 上建好远程仓库。
+### 建这个 routine 时踩的坑
+
+- **命令文件必须在仓库里。** cloud sandbox 只 clone 这一个仓库，所以 `/github-weekly` 从 `CluadeProjects/.claude/commands/` 挪到了本仓库的 `.claude/commands/`，父目录留了个 symlink 指回来。文件里的路径也改成运行时解析 `<ROOT>`，本地和云端共用一份。
+- **仓库必须 public。** 一开始建成 private，创建 routine 直接 403：`You don't have access to a repository this routine uses.` 私有仓库要手动去 https://github.com/settings/installations 把 Claude 的 GitHub App 授权到该仓库。改成 public 后立刻可用（`TwinCitiesEvents` 能跑通也是因为它是 public）。
+  - ⚠️ 代价：`config/style.md` 的风格 prompt、参考图、以及每周**尚未发布**的小红书文案都是公开可搜的。介意的话就去做上面那个授权，再把仓库改回 private。
+- **DST 会让时间漂一小时。** cron 固定 UTC，`0 3 * * 0` 在夏令时（CDT）是周六 22:00，到了冬令时（CST）会变成周六 21:00。要维持 22:00，11 月改成 `0 4 * * 0`。
+- **云端跳过并行子 agent。** routine prompt 里明确要求顺序 WebFetch 读 README，因为云端是一次性会话，上下文膨胀无所谓，少一层依赖更稳。
+
+### 仍未验证的部分
+
+- sandbox 能否成功 `git push` 回本仓库（`TwinCitiesEventNotification` 当初需要在 push 步骤里嵌 fine-grained PAT）。routine prompt 已要求 push 失败时**不要静默跳过**，而是贴出完整报错并把 rednote 正文打印出来兜底。
+- sandbox 的出网白名单是否已包含 `github.com` / `api.github.com`。
+- 云端匿名 GitHub 配额（60 次/小时）是否够用。sandbox 是全新 IP，理论上够，实测再看。
+
+首次真实运行后需要回来把这三条结论补上。
