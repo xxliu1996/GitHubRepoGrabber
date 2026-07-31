@@ -12,6 +12,7 @@ CLAUDE="/Users/xingxingliu/.local/bin/claude"
 LOG_DIR="$ROOT/logs"
 DATE="$(date +%F)"
 LOG="$LOG_DIR/$DATE.log"
+START_EPOCH="$(date +%s)"
 
 mkdir -p "$LOG_DIR"
 
@@ -58,11 +59,26 @@ export SHELL="${SHELL:-/bin/zsh}"
 
   echo "--- claude exited with $STATUS ---"
 
-  if [ -d "$ROOT/reports/$DATE" ]; then
-    echo "artifacts:"
-    ls -1 "$ROOT/reports/$DATE" | sed 's/^/  /'
-  else
-    echo "NO ARTIFACTS produced for $DATE"
+  # Checking that the files merely exist is not enough: a re-run on a date that
+  # already has a report will happily exit 0 without regenerating anything.
+  # Require all four to have been written during THIS run.
+  MISSING=0
+  STALE=0
+  for f in raw.json report.md rednote.md image-prompts.md; do
+    path="$ROOT/reports/$DATE/$f"
+    if [ ! -f "$path" ]; then
+      echo "MISSING: $f"
+      MISSING=$((MISSING + 1))
+    elif [ "$(stat -f %m "$path")" -lt "$START_EPOCH" ]; then
+      echo "STALE: $f (not rewritten this run)"
+      STALE=$((STALE + 1))
+    else
+      echo "ok: $f ($(wc -c < "$path" | tr -d ' ') bytes)"
+    fi
+  done
+
+  if [ "$MISSING" -gt 0 ] || [ "$STALE" -gt 0 ]; then
+    echo "FAILED: $MISSING missing, $STALE stale — the run did not actually produce a report"
     STATUS=1
   fi
 

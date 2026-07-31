@@ -67,27 +67,50 @@ curl -s -H "User-Agent: Mozilla/5.0" "https://github.com/trending?since=weekly" 
 **配图风格要换**
 只改 `config/style.md` 里那个 ```text 代码块。每周生成 `image-prompts.md` 时会原样内联进每一条 prompt。参考图路径也登记在那个文件里。
 
-## 云端定时任务
+## 定时任务（本地 launchd）
 
-已配置 Claude cloud routine，每周触发一次。
+每周六 22:00 本地时间自动跑一次。
 
-- **Routine**：`GitHub LLM/Agent 周报`（`trig_01D8VqbrydAm7touznNTGSuH`）
-- **管理页**：https://claude.ai/code/routines/trig_01D8VqbrydAm7touznNTGSuH
-- **cron**：`0 3 * * 0`（UTC 周日 03:00）= **周六 22:00 America/Chicago**
-- **remote**：https://github.com/xxliu1996/GitHubRepoGrabber
+- **plist**：`~/Library/LaunchAgents/com.xingxingliu.githubrepograbber.plist`
+- **runner**：`scripts/run_weekly.sh`（日志落在 `logs/<DATE>.log`，已 gitignore）
+- **触发时间**：`StartCalendarInterval` Weekday=6 Hour=22。launchd 跟随系统时区，**DST 自动处理**，不需要每年手动改。
+- **结果提醒**：跑完会发一条系统通知；失败的话带 Basso 提示音，日志路径写在通知里。
 
-### 建这个 routine 时踩的坑
+手动跑一次：
 
-- **命令文件必须在仓库里。** cloud sandbox 只 clone 这一个仓库，所以 `/github-weekly` 从 `CluadeProjects/.claude/commands/` 挪到了本仓库的 `.claude/commands/`，父目录留了个 symlink 指回来。文件里的路径也改成运行时解析 `<ROOT>`，本地和云端共用一份。
-- **仓库必须 public。** 一开始建成 private，创建 routine 直接 403：`You don't have access to a repository this routine uses.` 私有仓库要手动去 https://github.com/settings/installations 把 Claude 的 GitHub App 授权到该仓库。改成 public 后立刻可用（`TwinCitiesEvents` 能跑通也是因为它是 public）。
-  - ⚠️ 代价：`config/style.md` 的风格 prompt、参考图、以及每周**尚未发布**的小红书文案都是公开可搜的。介意的话就去做上面那个授权，再把仓库改回 private。
-- **DST 会让时间漂一小时。** cron 固定 UTC，`0 3 * * 0` 在夏令时（CDT）是周六 22:00，到了冬令时（CST）会变成周六 21:00。要维持 22:00，11 月改成 `0 4 * * 0`。
-- **云端跳过并行子 agent。** routine prompt 里明确要求顺序 WebFetch 读 README，因为云端是一次性会话，上下文膨胀无所谓，少一层依赖更稳。
+```bash
+launchctl kickstart -p gui/$(id -u)/com.xingxingliu.githubrepograbber
+tail -f logs/$(date +%F).log
+```
 
-### 仍未验证的部分
+停用 / 重新启用：
 
-- sandbox 能否成功 `git push` 回本仓库（`TwinCitiesEventNotification` 当初需要在 push 步骤里嵌 fine-grained PAT）。routine prompt 已要求 push 失败时**不要静默跳过**，而是贴出完整报错并把 rednote 正文打印出来兜底。
-- sandbox 的出网白名单是否已包含 `github.com` / `api.github.com`。
-- 云端匿名 GitHub 配额（60 次/小时）是否够用。sandbox 是全新 IP，理论上够，实测再看。
+```bash
+launchctl bootout gui/$(id -u)/com.xingxingliu.githubrepograbber
+launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.xingxingliu.githubrepograbber.plist
+```
 
-首次真实运行后需要回来把这三条结论补上。
+### 为什么不用云端 routine
+
+一开始配的是 Claude cloud routine（`trig_01D8VqbrydAm7touznNTGSuH`，现已 `enabled: false`），**实跑失败**。根因是云端出口走共享数据中心 IP：
+
+- `github.com/trending` 6 个语种页面**全部 403** —— GitHub 对数据中心 IP 反爬。同样的请求从家里 IP 是 200。
+- 匿名 Search API 配额按 IP 计，早被同出口的其他租户耗尽，9 个 topic 全被限流。
+- `git push` 被拒 403 —— sandbox 只有读权限（`TwinCitiesEventNotification` 当初是靠在 push 步骤嵌 fine-grained PAT 绕过的）。
+
+trending 页面是**唯一**能拿到真实"本周涨星数"的地方，而它恰好是最容易被数据中心 IP 拦的一环。所以这个项目天然适合跑在住宅 IP 上。
+
+云端方案还额外要求仓库 public（私有仓库创建 routine 直接 403，需要手动去 https://github.com/settings/installations 授权 Claude 的 GitHub App）。改回本地后这个约束消失，**仓库已改回 private**。
+
+### launchd 踩的坑
+
+- **`claude -p` 在 launchd 环境下会死在 `Not logged in · Please run /login`。** 它靠 `USER`/`LOGNAME` 去 keychain 取 `Claude Code-credentials`，而 launchd 不保证提供这两个变量。`run_weekly.sh` 里已显式 export（连同 `HOME`、`SHELL`、完整 `PATH`）。这是实测出来的，不是推测。
+- **GitHub token 不落地。** runner 运行时用 `git credential fill` 从 keychain 直接读，不写 `.env`，避免明文 token 留在磁盘上。
+- **Mac 必须醒着。** launchd 会在唤醒后补跑错过的任务，但关机就跳过。要保证周六晚上能跑，可以加一条定时唤醒：
+  ```bash
+  sudo pmset repeat wake MTWRFSU 21:55:00
+  ```
+
+### 命令文件的位置
+
+`/github-weekly` 的权威版本在本仓库的 `.claude/commands/github-weekly.md`，`CluadeProjects/.claude/commands/` 下是个 symlink 指回来。文件里的路径在运行时解析 `<ROOT>`，不写死绝对路径——这是当初为了兼容云端 sandbox 做的改动，现在虽然不用云端了，但保留它意味着仓库换个位置也不会坏。
