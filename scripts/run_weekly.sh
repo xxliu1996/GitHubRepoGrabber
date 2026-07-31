@@ -107,6 +107,16 @@ export SHELL="${SHELL:-/bin/zsh}"
     STATUS=1
   fi
 
+  # Xiaohongshu's length caps are hard numbers; enforce them with a script
+  # rather than trusting the model to have counted. An over-length draft is not
+  # publishable, so it must not pass as success.
+  if [ -f "$ROOT/reports/$DATE/rednote.md" ]; then
+    if ! python3 "$ROOT/scripts/check_rednote.py" "$ROOT/reports/$DATE/rednote.md"; then
+      echo "FAILED: rednote.md violates Xiaohongshu limits"
+      STATUS=1
+    fi
+  fi
+
   # Surface the outcome in Notification Center so a silent failure is visible
   # without having to open the log.
   if [ "$STATUS" -eq 0 ]; then

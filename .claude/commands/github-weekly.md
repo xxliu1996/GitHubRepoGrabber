@@ -93,7 +93,7 @@ python3 scripts/fetch_trending.py --limit 20 --out reports/<DATE>/raw.json > /de
 结构：
 
 ```markdown
-## 标题（≤20 字）
+## 标题
 
 <带 emoji 的钩子标题，例如「本周 GitHub 最火的 10 个 Agent 项目 🔥」>
 
@@ -119,7 +119,15 @@ python3 scripts/fetch_trending.py --limit 20 --out reports/<DATE>/raw.json > /de
 - 每条 2–3 行，小红书是手机端阅读，长段落没人看。
 - 不要用 Markdown 的 `**加粗**` 以外的复杂语法（小红书不渲染），列表就用 1️⃣2️⃣3️⃣ 这种 emoji 数字。
 - 链接写成 `github.com/xxx` 不带 `https://`（小红书会吞掉带协议头的链接）。
-- 总字数控制在 800–1000 字，小红书正文上限 1000 字。
+- **字数是硬约束，必须用脚本验证，不能靠估。** 写完立刻运行：
+
+  ```bash
+  python3 <ROOT>/scripts/check_rednote.py <ROOT>/reports/<DATE>/rednote.md
+  ```
+
+  它会检查标题 ≤20 字、正文 ≤1000 字、模板占位符是否残留、正文里有没有 `https://`。
+  **只要它报 FAIL 就必须压缩重写再跑一遍，循环到 OK 为止**，不要交超限的稿子（实测过：不验证的话正文很容易写到 1600+ 字）。
+  正文目标 800–950 字，给自己留余量——光 10 条链接就占掉约 340 字。
 
 ## 6. 写 `image-prompts.md`（配图 prompt）
 
