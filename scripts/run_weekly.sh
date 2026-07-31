@@ -46,9 +46,34 @@ export SHELL="${SHELL:-/bin/zsh}"
 
   cd "$ROOT" || { echo "FATAL: cannot cd to $ROOT"; exit 1; }
 
-  # Pull first so a report written on another machine does not cause a
-  # conflict when this run tries to push.
-  git pull --rebase --quiet origin main 2>&1 || echo "WARN: git pull failed, continuing"
+  # Pull first so a report written on another machine does not cause a conflict
+  # when this run tries to push. A rebase refuses to start with a dirty tree, so
+  # set uncommitted work aside first — including untracked files, which is where
+  # a half-finished report would live.
+  STASHED=0
+  if ! git diff --quiet || ! git diff --cached --quiet || [ -n "$(git ls-files --others --exclude-standard)" ]; then
+    if git stash push -u -q -m "run_weekly auto-stash $(date +%FT%T)"; then
+      STASHED=1
+      echo "stash   : local changes set aside"
+    else
+      echo "WARN: git stash failed, skipping pull to avoid touching your working tree"
+    fi
+  fi
+
+  if [ "$STASHED" -eq 1 ] || git diff --quiet; then
+    git pull --rebase --quiet origin main 2>&1 || echo "WARN: git pull failed, continuing"
+  fi
+
+  if [ "$STASHED" -eq 1 ]; then
+    if git stash pop -q 2>&1; then
+      echo "stash   : local changes restored"
+    else
+      # Never silently discard the user's work — leave it in the stash list and
+      # make the failure loud.
+      echo "WARN: could not restore stashed changes (conflict). They are SAFE in the stash:"
+      git stash list | head -3
+    fi
+  fi
 
   echo "--- running /github-weekly ---"
   "$CLAUDE" -p "/github-weekly" \
