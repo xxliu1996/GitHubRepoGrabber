@@ -255,6 +255,12 @@ def main():
     ap.add_argument("--limit", type=int, default=20, help="how many repos to emit")
     ap.add_argument("--enrich-pool", type=int, default=30, help="candidates to enrich before ranking")
     ap.add_argument("--week-of", help="YYYY-MM-DD anchor date (default: today)")
+    ap.add_argument(
+        "--min-repos",
+        type=int,
+        default=10,
+        help="exit 2 if fewer than this many repos survive (default: 10)",
+    )
     args = ap.parse_args()
 
     config = json.loads(CONFIG.read_text(encoding="utf-8"))
@@ -339,16 +345,33 @@ def main():
         "repos": top,
     }
 
+    # A run that collected nothing is a failure, not an empty result. Exit
+    # non-zero so a scheduled caller can tell "GitHub blocked us" apart from
+    # "quiet week" instead of silently succeeding with repos: [].
+    if len(top) < args.min_repos:
+        warn(
+            f"only {len(top)} repos survived (need >= {args.min_repos}); "
+            f"{len(candidates)} raw candidates collected. Treating this run as failed."
+        )
+        if args.out:
+            _write(args.out, result)
+        print(json.dumps(result, indent=2, ensure_ascii=False))
+        sys.exit(2)
+
     info(f"emitting {len(top)} repos")
     payload = json.dumps(result, indent=2, ensure_ascii=False)
     if args.out:
-        out_path = Path(args.out)
-        if not out_path.is_absolute():
-            out_path = ROOT / out_path
-        out_path.parent.mkdir(parents=True, exist_ok=True)
-        out_path.write_text(payload + "\n", encoding="utf-8")
-        info(f"wrote {out_path}")
+        _write(args.out, result)
     print(payload)
+
+
+def _write(out, result):
+    out_path = Path(out)
+    if not out_path.is_absolute():
+        out_path = ROOT / out_path
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    out_path.write_text(json.dumps(result, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+    info(f"wrote {out_path}")
 
 
 if __name__ == "__main__":
