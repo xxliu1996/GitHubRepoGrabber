@@ -76,6 +76,46 @@ curl -s -H "User-Agent: Mozilla/5.0" "https://github.com/trending?since=weekly" 
 - **触发时间**：`StartCalendarInterval` Weekday=6 Hour=22。launchd 跟随系统时区，**DST 自动处理**，不需要每年手动改。
 - **结果提醒**：跑完会发一条系统通知；失败的话带 Basso 提示音，日志路径写在通知里。
 
+### 部署步骤
+
+换机器、或者 plist 被清掉之后，按这三步重装：
+
+**1. 注册 launchd 任务**
+
+```bash
+launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.xingxingliu.githubrepograbber.plist
+launchctl print gui/$(id -u)/com.xingxingliu.githubrepograbber | grep -E 'state|runs'
+```
+
+**2. 设置定时唤醒（需要 sudo）**
+
+launchd 会在 Mac 唤醒后补跑错过的任务，但**关机就直接跳过这一轮**。加一条比任务早 5 分钟的唤醒，保证周六晚上机器是醒的：
+
+```bash
+sudo pmset repeat wake MTWRFSU 21:55:00
+```
+
+确认生效：
+
+```bash
+pmset -g sched
+```
+
+说明：
+- `MTWRFSU` 是每天都唤醒。只想周六唤醒就用 `S`（`pmset` 里 `S`=周六、`U`=周日），但每天唤醒更保险——万一某周六你人不在、Mac 关着，下次开机 launchd 也能补跑。
+- 这条是**系统级设置**，和本仓库无关，重装系统后要重新执行。
+- `pmset repeat` 只有一组设置，再执行一次会覆盖上一条，不会叠加。
+- 唤醒只是让机器醒着跑任务，屏幕不会亮。
+
+**3. 验证整条链路**
+
+```bash
+launchctl kickstart -p gui/$(id -u)/com.xingxingliu.githubrepograbber
+tail -f logs/$(date +%F).log
+```
+
+日志末尾要看到四个 `ok:` 和 `OK: .../rednote.md`，且退出码为 0 才算装好。
+
 手动跑一次：
 
 ```bash
@@ -106,10 +146,9 @@ trending 页面是**唯一**能拿到真实"本周涨星数"的地方，而它�
 
 - **`claude -p` 在 launchd 环境下会死在 `Not logged in · Please run /login`。** 它靠 `USER`/`LOGNAME` 去 keychain 取 `Claude Code-credentials`，而 launchd 不保证提供这两个变量。`run_weekly.sh` 里已显式 export（连同 `HOME`、`SHELL`、完整 `PATH`）。这是实测出来的，不是推测。
 - **GitHub token 不落地。** runner 运行时用 `git credential fill` 从 keychain 直接读，不写 `.env`，避免明文 token 留在磁盘上。
-- **Mac 必须醒着。** launchd 会在唤醒后补跑错过的任务，但关机就跳过。要保证周六晚上能跑，可以加一条定时唤醒：
-  ```bash
-  sudo pmset repeat wake MTWRFSU 21:55:00
-  ```
+- **Mac 必须醒着。** launchd 会在唤醒后补跑错过的任务，但关机就跳过 —— 用「部署步骤」第 2 步的 `pmset repeat wake` 解决。
+- **产物"存在"不等于"生成过"。** 头一次 launchd 实跑时当天已有报告，agent 直接跳过没重做，而 runner 只检查目录存在，于是退出码 0、看起来一切正常。现在 runner 会比对四个文件的 mtime 是否落在本次运行窗口内，命令里也写死了「无条件重新生成」。
+- **字数不能靠模型自觉。** 第一次真实生成的正文 1618 字、标题 23 字，双双超限，还把模板里的 `（≤20 字）` 标注抄进了成品。现在由 `scripts/check_rednote.py` 硬卡，不过就让整轮失败。
 
 ### 命令文件的位置
 
