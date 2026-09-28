@@ -1,0 +1,402 @@
+[
+  {
+    "date": "2026-09-26",
+    "theme": "ai-agent",
+    "theme_title": "AI / Agent",
+    "title": "GitHub 周报：LLM / Agent（2026-09-20 – 2026-09-27）",
+    "count": 10,
+    "slug": "2026-09-26-ai-agent",
+    "picks": [
+      {
+        "name": "vectorize-io/hindsight",
+        "url": "https://github.com/vectorize-io/hindsight"
+      },
+      {
+        "name": "stablyai/orca",
+        "url": "https://github.com/stablyai/orca"
+      },
+      {
+        "name": "cloudflare/security-audit-skill",
+        "url": "https://github.com/cloudflare/security-audit-skill"
+      },
+      {
+        "name": "alibaba/open-code-review",
+        "url": "https://github.com/alibaba/open-code-review"
+      },
+      {
+        "name": "Tencent/WeKnora",
+        "url": "https://github.com/Tencent/WeKnora"
+      },
+      {
+        "name": "bojieli/ai-agent-book",
+        "url": "https://github.com/bojieli/ai-agent-book"
+      },
+      {
+        "name": "addyosmani/agent-skills",
+        "url": "https://github.com/addyosmani/agent-skills"
+      },
+      {
+        "name": "Nasiko-Labs/nasiko",
+        "url": "https://github.com/Nasiko-Labs/nasiko"
+      },
+      {
+        "name": "Tencent/BrowserSkill",
+        "url": "https://github.com/Tencent/BrowserSkill"
+      },
+      {
+        "name": "strands-agents/harness-sdk",
+        "url": "https://github.com/strands-agents/harness-sdk"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-19",
+    "theme": "ai-agent",
+    "theme_title": "AI / Agent",
+    "title": "GitHub 周报：LLM / Agent（2026-09-13 – 2026-09-20）",
+    "count": 10,
+    "slug": "2026-09-19-ai-agent",
+    "picks": [
+      {
+        "name": "alibaba/open-code-review",
+        "url": "https://github.com/alibaba/open-code-review"
+      },
+      {
+        "name": "Tencent/WeKnora",
+        "url": "https://github.com/Tencent/WeKnora"
+      },
+      {
+        "name": "stablyai/orca",
+        "url": "https://github.com/stablyai/orca"
+      },
+      {
+        "name": "Panniantong/Agent-Reach",
+        "url": "https://github.com/Panniantong/Agent-Reach"
+      },
+      {
+        "name": "addyosmani/agent-skills",
+        "url": "https://github.com/addyosmani/agent-skills"
+      },
+      {
+        "name": "danny-avila/LibreChat",
+        "url": "https://github.com/danny-avila/LibreChat"
+      },
+      {
+        "name": "melgarafael/DeskcommCRM",
+        "url": "https://github.com/melgarafael/DeskcommCRM"
+      },
+      {
+        "name": "vxcontrol/pentagi",
+        "url": "https://github.com/vxcontrol/pentagi"
+      },
+      {
+        "name": "bojieli/ai-agent-book",
+        "url": "https://github.com/bojieli/ai-agent-book"
+      },
+      {
+        "name": "alphaXiv/OpenResearch",
+        "url": "https://github.com/alphaXiv/OpenResearch"
+      }
+    ]
+  },
+  {
+    "date": "2026-09-06",
+    "theme": "ai-agent",
+    "theme_title": "AI / Agent",
+    "title": "GitHub 周报：LLM / Agent（2026-08-30 – 2026-09-06）",
+    "count": 10,
+    "slug": "2026-09-06-ai-agent",
+    "picks": [
+      {
+        "name": "NVIDIA/SkillSpector",
+        "url": "https://github.com/NVIDIA/SkillSpector"
+      },
+      {
+        "name": "ChromeDevTools/chrome-devtools-mcp",
+        "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp"
+      },
+      {
+        "name": "Tencent/WeKnora",
+        "url": "https://github.com/Tencent/WeKnora"
+      },
+      {
+        "name": "TencentCloud/CubeSandbox",
+        "url": "https://github.com/TencentCloud/CubeSandbox"
+      },
+      {
+        "name": "mlc-ai/web-llm",
+        "url": "https://github.com/mlc-ai/web-llm"
+      },
+      {
+        "name": "K-Dense-AI/scientific-agent-skills",
+        "url": "https://github.com/K-Dense-AI/scientific-agent-skills"
+      },
+      {
+        "name": "unclecode/crawl4ai",
+        "url": "https://github.com/unclecode/crawl4ai"
+      },
+      {
+        "name": "weave-os/router",
+        "url": "https://github.com/weave-os/router"
+      },
+      {
+        "name": "THU-MAIC/OpenMAIC",
+        "url": "https://github.com/THU-MAIC/OpenMAIC"
+      },
+      {
+        "name": "linshenkx/prompt-optimizer",
+        "url": "https://github.com/linshenkx/prompt-optimizer"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-22",
+    "theme": "ai-agent",
+    "theme_title": "AI / Agent",
+    "title": "GitHub 周报：LLM / Agent（2026-08-16 – 2026-08-23）",
+    "count": 10,
+    "slug": "2026-08-22-ai-agent",
+    "picks": [
+      {
+        "name": "openai/codex",
+        "url": "https://github.com/openai/codex"
+      },
+      {
+        "name": "cathrynlavery/diagram-design",
+        "url": "https://github.com/cathrynlavery/diagram-design"
+      },
+      {
+        "name": "volcengine/OpenViking",
+        "url": "https://github.com/volcengine/OpenViking"
+      },
+      {
+        "name": "Tencent/AI-Infra-Guard",
+        "url": "https://github.com/Tencent/AI-Infra-Guard"
+      },
+      {
+        "name": "QuantumNous/new-api",
+        "url": "https://github.com/QuantumNous/new-api"
+      },
+      {
+        "name": "apache/maka",
+        "url": "https://github.com/apache/maka"
+      },
+      {
+        "name": "zzet/gortex",
+        "url": "https://github.com/zzet/gortex"
+      },
+      {
+        "name": "microsoft/agent-framework",
+        "url": "https://github.com/microsoft/agent-framework"
+      },
+      {
+        "name": "eneskirca/nodeterm",
+        "url": "https://github.com/eneskirca/nodeterm"
+      },
+      {
+        "name": "ZSeven-W/openpencil",
+        "url": "https://github.com/ZSeven-W/openpencil"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-15",
+    "theme": "ai-agent",
+    "theme_title": "AI / Agent",
+    "title": "GitHub 周报：LLM / Agent（2026-08-09 – 2026-08-16）",
+    "count": 10,
+    "slug": "2026-08-15-ai-agent",
+    "picks": [
+      {
+        "name": "cathrynlavery/diagram-design",
+        "url": "https://github.com/cathrynlavery/diagram-design"
+      },
+      {
+        "name": "PrimeIntellect-ai/prime-agent",
+        "url": "https://github.com/PrimeIntellect-ai/prime-agent"
+      },
+      {
+        "name": "stablyai/orca",
+        "url": "https://github.com/stablyai/orca"
+      },
+      {
+        "name": "earendil-works/pi",
+        "url": "https://github.com/earendil-works/pi"
+      },
+      {
+        "name": "addyosmani/agent-skills",
+        "url": "https://github.com/addyosmani/agent-skills"
+      },
+      {
+        "name": "TencentCloud/TencentDB-Agent-Memory",
+        "url": "https://github.com/TencentCloud/TencentDB-Agent-Memory"
+      },
+      {
+        "name": "anthropics/skills",
+        "url": "https://github.com/anthropics/skills"
+      },
+      {
+        "name": "vitali87/code-graph-rag",
+        "url": "https://github.com/vitali87/code-graph-rag"
+      },
+      {
+        "name": "NVIDIA-NeMo/Switchyard",
+        "url": "https://github.com/NVIDIA-NeMo/Switchyard"
+      },
+      {
+        "name": "huangruiteng/loopx",
+        "url": "https://github.com/huangruiteng/loopx"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-08",
+    "theme": "ai-agent",
+    "theme_title": "AI / Agent",
+    "title": "GitHub 周报：LLM / Agent（2026-08-02 – 2026-08-09）",
+    "count": 10,
+    "slug": "2026-08-08-ai-agent",
+    "picks": [
+      {
+        "name": "TencentCloud/TencentDB-Agent-Memory",
+        "url": "https://github.com/TencentCloud/TencentDB-Agent-Memory"
+      },
+      {
+        "name": "diegosouzapw/OmniRoute",
+        "url": "https://github.com/diegosouzapw/OmniRoute"
+      },
+      {
+        "name": "esengine/DeepSeek-Reasonix",
+        "url": "https://github.com/esengine/DeepSeek-Reasonix"
+      },
+      {
+        "name": "huangruiteng/loopx",
+        "url": "https://github.com/huangruiteng/loopx"
+      },
+      {
+        "name": "alibaba/open-code-review",
+        "url": "https://github.com/alibaba/open-code-review"
+      },
+      {
+        "name": "google/skills",
+        "url": "https://github.com/google/skills"
+      },
+      {
+        "name": "FalkorDB/FalkorDB",
+        "url": "https://github.com/FalkorDB/FalkorDB"
+      },
+      {
+        "name": "vercel-labs/agent-browser",
+        "url": "https://github.com/vercel-labs/agent-browser"
+      },
+      {
+        "name": "livekit/agents",
+        "url": "https://github.com/livekit/agents"
+      },
+      {
+        "name": "microsoft/ai-agents-for-beginners",
+        "url": "https://github.com/microsoft/ai-agents-for-beginners"
+      }
+    ]
+  },
+  {
+    "date": "2026-08-01",
+    "theme": "ai-agent",
+    "theme_title": "AI / Agent",
+    "title": "GitHub 周报：LLM / Agent（2026-07-26 – 2026-08-02）",
+    "count": 10,
+    "slug": "2026-08-01-ai-agent",
+    "picks": [
+      {
+        "name": "diegosouzapw/OmniRoute",
+        "url": "https://github.com/diegosouzapw/OmniRoute"
+      },
+      {
+        "name": "ayghri/i-have-adhd",
+        "url": "https://github.com/ayghri/i-have-adhd"
+      },
+      {
+        "name": "alibaba/open-code-review",
+        "url": "https://github.com/alibaba/open-code-review"
+      },
+      {
+        "name": "earendil-works/pi",
+        "url": "https://github.com/earendil-works/pi"
+      },
+      {
+        "name": "citrolabs/ego-lite",
+        "url": "https://github.com/citrolabs/ego-lite"
+      },
+      {
+        "name": "huggingface/speech-to-speech",
+        "url": "https://github.com/huggingface/speech-to-speech"
+      },
+      {
+        "name": "openai/codex",
+        "url": "https://github.com/openai/codex"
+      },
+      {
+        "name": "microsoft/agent-governance-toolkit",
+        "url": "https://github.com/microsoft/agent-governance-toolkit"
+      },
+      {
+        "name": "infiniflow/ragflow",
+        "url": "https://github.com/infiniflow/ragflow"
+      },
+      {
+        "name": "Tracer-Cloud/opensre",
+        "url": "https://github.com/Tracer-Cloud/opensre"
+      }
+    ]
+  },
+  {
+    "date": "2026-07-30",
+    "theme": "ai-agent",
+    "theme_title": "AI / Agent",
+    "title": "GitHub 周报：LLM / Agent（2026-07-24 – 2026-07-31）",
+    "count": 10,
+    "slug": "2026-07-30-ai-agent",
+    "picks": [
+      {
+        "name": "mattpocock/skills",
+        "url": "https://github.com/mattpocock/skills"
+      },
+      {
+        "name": "bojieli/ai-agent-book",
+        "url": "https://github.com/bojieli/ai-agent-book"
+      },
+      {
+        "name": "diegosouzapw/OmniRoute",
+        "url": "https://github.com/diegosouzapw/OmniRoute"
+      },
+      {
+        "name": "stablyai/orca",
+        "url": "https://github.com/stablyai/orca"
+      },
+      {
+        "name": "alibaba/open-code-review",
+        "url": "https://github.com/alibaba/open-code-review"
+      },
+      {
+        "name": "citrolabs/ego-lite",
+        "url": "https://github.com/citrolabs/ego-lite"
+      },
+      {
+        "name": "tirth8205/code-review-graph",
+        "url": "https://github.com/tirth8205/code-review-graph"
+      },
+      {
+        "name": "infiniflow/ragflow",
+        "url": "https://github.com/infiniflow/ragflow"
+      },
+      {
+        "name": "microsoft/agent-governance-toolkit",
+        "url": "https://github.com/microsoft/agent-governance-toolkit"
+      },
+      {
+        "name": "MoonshotAI/kimi-code",
+        "url": "https://github.com/MoonshotAI/kimi-code"
+      }
+    ]
+  }
+]

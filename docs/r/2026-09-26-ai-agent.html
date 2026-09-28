@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI / Agent · 2026-09-26 · GitHub 周报</title>
+<link rel="stylesheet" href="../assets/site.css">
+
+</head>
+<body>
+
+<div class="page report" style="--accent:#2f6f5e">
+  <header class="cover">
+    <a class="back" href="../index.html">← 返回首页</a>
+    <h1>GitHub 周报：LLM / Agent（2026-09-20 – 2026-09-27）</h1>
+    <div class="meta">
+      <span class="badge">AI / Agent</span>
+      <span>2026-09-20 – 2026-09-27</span>
+      <span>10 个项目</span>
+    </div>
+    <p class="subtitle">编码 Agent、Agent Skills、MCP、RAG、模型网关</p>
+  </header>
+
+  <div class="lede"><p>本周的热榜有一条清晰的主线：Agent 的「工程化」正在压过「模型本身」。涨得最猛的项目不是又一个大模型，而是给 Agent 补基础设施——记忆（hindsight）、并行编排（orca）、可复用技能（cloudflare、addyosmani）、代码评审（阿里）、多 Agent 治理网关（nasiko）、生产级 SDK（strands）。换句话说，社区默认「大家都在用 Claude Code / Codex 这类编码 Agent」，接下来的竞争在于怎么让它们记得住、跑得并行、审得住、管得住。同时 RAG 没有退场，而是被重新包装成「知识平台」（WeKnora），中文原创的 Agent 系统教材（ai-agent-book）也冲进了榜单，说明这波技术开始向更广的开发者人群下沉。</p>
+</div>
+<section class="repo"><h2>1. <a href="https://github.com/vectorize-io/hindsight">vectorize-io/hindsight</a></h2>
+<blockquote>Hindsight: Agent Memory That Learns</blockquote>
+<ul class="evidence"><li>⭐ 本周 +7282 ｜ 总计 32425 ｜ Python ｜ MIT</li><li>主页：https://hindsight.vectorize.io/</li></ul>
+<p>一个会「学习」的 Agent 记忆系统，用 Retain/Recall/Reflect 三种操作把对话沉淀成事实、经验、观点和心智模型，再多路径检索出来。面向做对话式或自主任务型 Agent（尤其「AI 员工」类）的开发者。相比传统单一 RAG 或知识图谱方案，它同时融合语义、关键词、图和时序四种检索路径，并称在 LongMemEval 基准上拿到业界最高准确率。</p>
+</section>
+<section class="repo"><h2>2. <a href="https://github.com/stablyai/orca">stablyai/orca</a></h2>
+<blockquote>Orca is the ADE for working with a fleet of parallel agents. Run any coding agent with your own subscription. Available on desktop, mobile and remote runtime.</blockquote>
+<ul class="evidence"><li>⭐ 本周 +6503 ｜ 总计 78979 ｜ TypeScript ｜ MIT</li><li>主页：https://onOrca.dev</li></ul>
+<p>一个能并行编排多个编码 Agent（Claude Code、Codex、OpenCode、Pi 等）的开发环境，每个 Agent 跑在独立的 git worktree 里，可以对比结果再择优合并。面向追求效率、熟悉命令行与版本控制的重度开发者。和多数单 Agent IDE 不同，它主打「一个提示词同时跑五个 Agent」，还配了可视化 Design Mode、内联 diff 评审和跨桌面/移动端的一体化工作流。</p>
+</section>
+<section class="repo"><h2>3. <a href="https://github.com/cloudflare/security-audit-skill">cloudflare/security-audit-skill</a></h2>
+<blockquote>A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings</blockquote>
+<ul class="evidence"><li>⭐ 本周 +6474 ｜ 总计 22046 ｜ JavaScript ｜ MIT</li></ul>
+<p>一个供编码 Agent 使用的自动化安全审计 skill，按侦察、漏洞挖掘、验证、结构化输出、独立复核、报告六个阶段推进。面向使用具备工具调用能力的编码 Agent、需要系统性挖漏洞的开发者和安全团队。新意在于「找漏洞的 Agent 绝不负责验证自己的发现」这种对抗式独立复核机制，配合覆盖率账本让多次运行相互叠加，方法论源自 Cloudflare 生产环境的真实漏洞挖掘系统。</p>
+</section>
+<section class="repo"><h2>4. <a href="https://github.com/alibaba/open-code-review">alibaba/open-code-review</a></h2>
+<blockquote>Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI &amp; Anthropic compatible.</blockquote>
+<ul class="evidence"><li>⭐ 本周 +4310 ｜ 总计 41645 ｜ Go ｜ Apache-2.0</li><li>主页：https://open-codereview.ai</li></ul>
+<p>阿里巴巴内部沉淀两年、服务数万开发者后开源的 AI 代码评审命令行工具，读取 Git diff 后交给可配置的 LLM Agent 生成带行级定位的评审意见，可接进本地或 CI。兼容 Claude Code、Codex、Cursor 等多种 Agent。相比通用 Agent，它用「确定性工程 + Agent 混合」架构对文件筛选、分组、规则匹配做硬约束，同等模型下精确率和 F1 更高，且只消耗约 1/9 的 token（有意牺牲一定召回换更少噪音）。</p>
+</section>
+<section class="repo"><h2>5. <a href="https://github.com/Tencent/WeKnora">Tencent/WeKnora</a></h2>
+<blockquote>Open-source LLM knowledge platform: turn raw documents into a queryable RAG, an autonomous reasoning agent, and a self-maintaining Wiki.</blockquote>
+<ul class="evidence"><li>⭐ 本周 +3015 ｜ 总计 30368 ｜ Go ｜ 自定义许可</li><li>主页：https://weknora.weixin.qq.com</li></ul>
+<p>腾讯开源的 LLM 驱动企业知识框架，把团队文档统一起来做检索、推理和维护，同一知识库上同时提供 RAG 问答、多步任务 Agent 和 Wiki 三种模式。面向要私有化部署知识库、对接微信/飞书/Slack 等渠道的企业和开发者，支持 27 家模型厂商、十多种文档格式。差异化在于三合一的知识形态，加上技能沙箱、浏览器操作、跨会话长期记忆、多工作区 RBAC 权限与 Langfuse 链路追踪，且模型、向量库、存储均可替换、数据留在自有环境。</p>
+</section>
+<section class="repo"><h2>6. <a href="https://github.com/bojieli/ai-agent-book">bojieli/ai-agent-book</a></h2>
+<blockquote>《深入理解 AI Agent：设计原理与工程实践》（李博杰 著）开源主仓库：全书正文、编译版 PDF 与按章配套代码</blockquote>
+<ul class="evidence"><li>⭐ 本周 +2556 ｜ 总计 51191 ｜ Python ｜ Apache-2.0</li></ul>
+<p>一本围绕「Agent = LLM + 上下文 + 工具」核心公式、用 10 章从原理讲到工程实战的开源电子书。面向想系统学习 AI Agent 的开发者与学习者，正文、配图和 109 个配套实验全部开源、支持 15 种语言。相比零散教程或纯理论资料，它章节体系完整（覆盖上下文工程、记忆与 RAG、工具/MCP、Coding Agent、评估、后训练、多 Agent 协作等），且配有可亲手运行复现的大量实验。</p>
+</section>
+<section class="repo"><h2>7. <a href="https://github.com/addyosmani/agent-skills">addyosmani/agent-skills</a></h2>
+<blockquote>Production-grade engineering skills for AI coding agents.</blockquote>
+<ul class="evidence"><li>⭐ 本周 +2510 ｜ 总计 99301 ｜ JavaScript ｜ MIT</li><li>主页：https://skills.addy.ie</li></ul>
+<p>一套面向编码 Agent（Claude Code、Cursor、Copilot、Cline 等 65+ 工具）的 25 个结构化工作流，用 <code>/spec</code>、<code>/plan</code>、<code>/build</code>、<code>/test</code>、<code>/ship</code> 等斜杠命令，把资深工程师从需求到部署的规范固化成带检查点和验证门的流程。给希望在 Agent 驱动开发中保持一致工程标准的团队使用。和普通提示词模板不同，它强调「流程驱动 + 强制验证」，还内置一张「反甩锅表」（列出 Agent 跳过测试/规范的常见借口及反驳）逼 Agent 别走偷工减料的最短路径。</p>
+</section>
+<section class="repo"><h2>8. <a href="https://github.com/Nasiko-Labs/nasiko">Nasiko-Labs/nasiko</a></h2>
+<blockquote>Developer Control Plane for your AI Agents</blockquote>
+<ul class="evidence"><li>⭐ 本周 +2342 ｜ 总计 8933 ｜ Rust ｜ 自定义许可</li><li>主页：https://www.nasiko.com</li></ul>
+<p>一个面向多 Agent 的统一控制平面，让所有讲 A2A（Agent-to-Agent）协议的 Agent 通过一条 <code>nasiko deploy</code> 完成构建、注册、部署，并集中做智能路由、安全代理、可观测性和成本追踪。给需要编排多 Agent、又不想被专有格式锁定的开发和运维团队。差异在于基于开放 A2A 协议、采用零信任代理（Agent 不直接接公网、也不持有真实 API 密钥）、内置 OCI registry 无外部依赖，并用 Rust 打包了 CLI + 服务端 + UI 一整套。</p>
+</section>
+<section class="repo"><h2>9. <a href="https://github.com/Tencent/BrowserSkill">Tencent/BrowserSkill</a></h2>
+<blockquote>Let AI agents use your real, logged-in browser without interrupting your work. CLI + extension for browser automation across any shell-capable AI agent.</blockquote>
+<ul class="evidence"><li>⭐ 本周 +1716 ｜ 总计 7384 ｜ TypeScript ｜ MIT</li></ul>
+<p>让 AI Agent 在你已登录的 Chrome/Edge 里干活（读页面、填表单、截图、抓包调试），同时不打断你自己的浏览。面向要基于现有登录态做网页自动化和网站故障排查的开发者与研究者，可搭配 Cursor、Claude Code 等，支持本地与远程两种模式。相比同类，它复用现成登录会话而非另建凭证、内置能抓网络请求/响应体/控制台日志的调试工作台，且默认无强制云服务、数据本地留存。</p>
+</section>
+<section class="repo"><h2>10. <a href="https://github.com/strands-agents/harness-sdk">strands-agents/harness-sdk</a></h2>
+<blockquote>Build an agent harness and control it end-to-end. Open-source SDK for production AI agents in Python &amp; TypeScript - any model, any cloud.</blockquote>
+<ul class="evidence"><li>⭐ 本周 +1097 ｜ 总计 8464 ｜ Python ｜ Apache-2.0</li><li>主页：http://strandsagents.com/</li></ul>
+<p>一个开源的 Agent 构建框架（Python 和 TypeScript），用 <code>create_harness()</code> 一行拿到装配好的 Agent，内置生命周期控制（轮次上限、token 预算、取消、停止原因）、工具、结构化输出、记忆、会话、MCP 和多 Agent 编排。面向想替代手写 agent loop、追求跨模型厂商（Bedrock、Anthropic、OpenAI、Gemini）可移植的生产级开发者。新意在于完全在本地进程内运行、无外部控制面、切换模型时业务代码不变，并默认追踪每一步决策，定位在极简 agent 库与重度封装平台之间。</p></section>
+
+  <nav class="pager"><a href="2026-09-19-ai-agent.html">更早一期（2026-09-19）→</a></nav>
+  <footer class="foot">
+    <a href="../index.html">← 返回首页</a>
+    <a href="../archive.html">历史归档</a>
+  </footer>
+</div>
+
+</body>
+</html>

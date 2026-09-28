@@ -247,27 +247,66 @@ def estimated_weekly(repo):
     return int(stars / weeks)
 
 
+def prerank_key(repo):
+    """Ordering used to spend the enrichment budget, before any repo has been
+    enriched. Trending hits carry a measured weekly delta; search hits carry
+    nothing, so estimate from the prefetched payload instead of letting them all
+    collapse to 0 - otherwise a theme whose repos only ever arrive via search
+    (every theme but ai-agent) never survives the pool cut."""
+    measured = repo.get("stars_this_week")
+    if measured:
+        return measured
+    pre = repo.get("_prefetched") or {}
+    return estimated_weekly(
+        {"stars": pre.get("stargazers_count"), "created_at": pre.get("created_at")}
+    ) * 0.5
+
+
 # --------------------------------------------------------------------------
+
+def load_theme(name):
+    """Resolve one theme's knobs, merged over the shared block."""
+    config = json.loads(CONFIG.read_text(encoding="utf-8"))
+    themes = config["themes"]
+    if name not in themes:
+        sys.exit(f"unknown theme '{name}'; config has: {', '.join(themes)}")
+    theme = dict(config.get("shared", {}))
+    theme.update(themes[name])
+    theme["slug"] = name
+    return theme, list(themes)
+
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__)
+    ap.add_argument("--theme", help="which theme in config/topics.json to grab")
+    ap.add_argument("--list-themes", action="store_true", help="print the configured theme slugs and exit")
     ap.add_argument("--out", help="also write the JSON to this path")
-    ap.add_argument("--limit", type=int, default=20, help="how many repos to emit")
-    ap.add_argument("--enrich-pool", type=int, default=30, help="candidates to enrich before ranking")
+    ap.add_argument("--limit", type=int, help="how many repos to emit (default: theme's 'limit')")
+    ap.add_argument("--enrich-pool", type=int, help="candidates to enrich before ranking")
     ap.add_argument("--week-of", help="YYYY-MM-DD anchor date (default: today)")
     ap.add_argument(
         "--min-repos",
         type=int,
-        default=10,
-        help="exit 2 if fewer than this many repos survive (default: 10)",
+        help="exit 2 if fewer than this many repos survive (default: theme's 'min_repos')",
     )
     args = ap.parse_args()
 
-    config = json.loads(CONFIG.read_text(encoding="utf-8"))
+    if args.list_themes:
+        _, names = load_theme(next(iter(json.loads(CONFIG.read_text(encoding="utf-8"))["themes"])))
+        print("\n".join(names))
+        return
+    if not args.theme:
+        ap.error("--theme is required (use --list-themes to see the options)")
+
+    config, _ = load_theme(args.theme)
     keywords = config["keywords"]
     min_score = config.get("min_score", 3)
     min_stars = config.get("min_stars", 0)
     excludes = config.get("exclude_patterns", [])
+    limit = args.limit if args.limit is not None else config.get("limit", 20)
+    enrich_pool = args.enrich_pool if args.enrich_pool is not None else config.get("enrich_pool", 30)
+    min_repos = args.min_repos if args.min_repos is not None else config.get("min_repos", 5)
+    info(f"theme '{args.theme}' ({config.get('title', args.theme)}): limit={limit} min_stars={min_stars}")
 
     anchor = (
         datetime.strptime(args.week_of, "%Y-%m-%d").date()
@@ -310,8 +349,8 @@ def main():
         scored.append(repo)
 
     # cheap pre-rank so the enrichment budget goes to the most promising repos
-    scored.sort(key=lambda r: (r.get("stars_this_week") or 0, r["_score"]), reverse=True)
-    scored = scored[: args.enrich_pool]
+    scored.sort(key=lambda r: (prerank_key(r), r["_score"]), reverse=True)
+    scored = scored[:enrich_pool]
     info(f"{len(scored)} candidates passed the topic filter; enriching")
 
     # 3. enrich
@@ -331,13 +370,16 @@ def main():
         repo["_rank_key"] = measured if measured else repo["stars_this_week_estimated"] * 0.5
 
     enriched.sort(key=lambda r: (r["_rank_key"], r["_score"]), reverse=True)
-    top = enriched[: args.limit]
+    top = enriched[:limit]
     for repo in top:
         repo.pop("_rank_key", None)
         repo["score"] = repo.pop("_score")
 
     result = {
         "generated_at": datetime.now(timezone.utc).isoformat(),
+        "theme": args.theme,
+        "theme_title": config.get("title", args.theme),
+        "theme_subtitle": config.get("subtitle", ""),
         "week_start": since_date,
         "week_end": anchor.isoformat(),
         "authenticated": bool(TOKEN),
@@ -348,9 +390,9 @@ def main():
     # A run that collected nothing is a failure, not an empty result. Exit
     # non-zero so a scheduled caller can tell "GitHub blocked us" apart from
     # "quiet week" instead of silently succeeding with repos: [].
-    if len(top) < args.min_repos:
+    if len(top) < min_repos:
         warn(
-            f"only {len(top)} repos survived (need >= {args.min_repos}); "
+            f"only {len(top)} repos survived (need >= {min_repos}); "
             f"{len(candidates)} raw candidates collected. Treating this run as failed."
         )
         if args.out:

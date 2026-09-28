@@ -86,35 +86,39 @@ export SHELL="${SHELL:-/bin/zsh}"
 
   # Checking that the files merely exist is not enough: a re-run on a date that
   # already has a report will happily exit 0 without regenerating anything.
-  # Require all four to have been written during THIS run.
+  # Require them to have been written during THIS run.
+  #
+  # ai-agent is the only theme that must produce a report every week. The three
+  # niche themes genuinely go quiet some weeks, and the command is told to skip
+  # a theme rather than pad it with toy repos — so a missing ar-vr report is a
+  # normal outcome, not a failure. Losing ALL of them is not.
   MISSING=0
   STALE=0
-  for f in raw.json report.md rednote.md image-prompts.md; do
-    path="$ROOT/reports/$DATE/$f"
+  THEMES_OK=0
+  for T in ai-agent ar-vr smart-glasses robotics; do
+    path="$ROOT/reports/$DATE/$T/report.md"
     if [ ! -f "$path" ]; then
-      echo "MISSING: $f"
-      MISSING=$((MISSING + 1))
+      echo "absent: $T/report.md"
+      [ "$T" = "ai-agent" ] && MISSING=$((MISSING + 1))
     elif [ "$(stat -f %m "$path")" -lt "$START_EPOCH" ]; then
-      echo "STALE: $f (not rewritten this run)"
+      echo "STALE: $T/report.md (not rewritten this run)"
       STALE=$((STALE + 1))
     else
-      echo "ok: $f ($(wc -c < "$path" | tr -d ' ') bytes)"
+      echo "ok: $T/report.md ($(wc -c < "$path" | tr -d ' ') bytes)"
+      THEMES_OK=$((THEMES_OK + 1))
     fi
   done
 
-  if [ "$MISSING" -gt 0 ] || [ "$STALE" -gt 0 ]; then
-    echo "FAILED: $MISSING missing, $STALE stale — the run did not actually produce a report"
+  if [ "$MISSING" -gt 0 ] || [ "$STALE" -gt 0 ] || [ "$THEMES_OK" -eq 0 ]; then
+    echo "FAILED: $MISSING required missing, $STALE stale, $THEMES_OK themes produced — not a real run"
     STATUS=1
   fi
 
-  # Xiaohongshu's length caps are hard numbers; enforce them with a script
-  # rather than trusting the model to have counted. An over-length draft is not
-  # publishable, so it must not pass as success.
-  if [ -f "$ROOT/reports/$DATE/rednote.md" ]; then
-    if ! python3 "$ROOT/scripts/check_rednote.py" "$ROOT/reports/$DATE/rednote.md"; then
-      echo "FAILED: rednote.md violates Xiaohongshu limits"
-      STATUS=1
-    fi
+  # The site is the deliverable now, so rebuild it here too rather than trusting
+  # the model to have run step 5. Idempotent, so a second build is harmless.
+  if ! python3 "$ROOT/scripts/build_site.py"; then
+    echo "FAILED: build_site.py could not rebuild docs/"
+    STATUS=1
   fi
 
   # Surface the outcome in Notification Center so a silent failure is visible

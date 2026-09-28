@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI / Agent · 2026-07-30 · GitHub 周报</title>
+<link rel="stylesheet" href="../assets/site.css">
+
+</head>
+<body>
+
+<div class="page report" style="--accent:#2f6f5e">
+  <header class="cover">
+    <a class="back" href="../index.html">← 返回首页</a>
+    <h1>GitHub 周报：LLM / Agent（2026-07-24 – 2026-07-31）</h1>
+    <div class="meta">
+      <span class="badge">AI / Agent</span>
+      <span>2026-07-24 – 2026-07-31</span>
+      <span>10 个项目</span>
+    </div>
+    <p class="subtitle">编码 Agent、Agent Skills、MCP、RAG、模型网关</p>
+  </header>
+
+  <div class="lede"><p>这周最扎眼的趋势是"Agent 基础设施"全面开花——不再只是比谁的 Agent 更聪明,而是比谁能把一堆 Agent 管好、跑快、审得清楚。Skills 生态持续升温(mattpocock/skills 一周暴涨破万星),多 Agent 并行编排(Orca)、浏览器自动化专用运行时(ego lite)、代码审查从"纯 Agent"转向"确定性工程 + Agent 混合架构"(阿里 open-code-review)、以及给生产环境 Agent 上治理护栏(微软 agent-governance-toolkit)几条线同时在推进。简单说:大家已经默认"一个 Agent 不够用",这周的热门项目大多是在解决"很多 Agent 一起跑"之后冒出来的新问题。</p>
+</div>
+<section class="repo"><h2>1. <a href="https://github.com/mattpocock/skills">mattpocock/skills</a></h2>
+<blockquote>Skills for Real Engineers. Straight from my .agents directory.</blockquote>
+<ul class="evidence"><li>⭐ 本周 +12147 ｜ 总计 196268 ｜ Shell ｜ MIT</li></ul>
+<p>这是 Matt Pocock 开源的一套面向"真实工程场景"的 AI Agent Skills 集合，供使用 Claude Code、Codex 等编程 Agent 的开发者安装使用，目标是解决人机对齐不足、Agent 表达啰嗦等常见痛点。相比 GSD、BMAD、Spec-Kit 等"接管整个开发流程"的方案，它主打小巧、可组合、可自由修改、不绑定特定模型，让开发者保留对流程的掌控权。</p>
+</section>
+<section class="repo"><h2>2. <a href="https://github.com/bojieli/ai-agent-book">bojieli/ai-agent-book</a></h2>
+<blockquote>《深入理解 AI Agent：设计原理与工程实践》（李博杰 著）开源主仓库：全书正文、编译版 PDF 与按章配套代码</blockquote>
+<ul class="evidence"><li>⭐ 本周 +9304 ｜ 总计 27390 ｜ Python ｜ Apache-2.0</li></ul>
+<p>这是一本围绕"Agent = LLM + 上下文 + 工具"核心公式展开的开源中文电子书，系统讲解 AI Agent 的设计原理与工程实践，涵盖上下文工程、记忆与知识库、工具协议、Coding Agent、评估、模型后训练等十章内容，适合希望深入理解 Agent 底层机制的工程师和研究者。相较于同类资料，它不仅提供理论讲解，还配套 94 个可动手复现的实验，并已被社区翻译成十种语言，兼具系统性与实操性。</p>
+</section>
+<section class="repo"><h2>3. <a href="https://github.com/diegosouzapw/OmniRoute">diegosouzapw/OmniRoute</a></h2>
+<blockquote>Never stop coding. Free MIT AI gateway: one endpoint, 290+ providers (90+ free), 500+ models — Kimi, Claude, GPT, OpenAI, Gemini, GLM, DeepSeek, MiniMax. Works with Claude Code, Codex, Cursor, OpenCode, Cline &amp; Copilot. Quota-aware auto-fallback, RTK+Caveman compression saves 15-95% tokens, MCP/A2A, Desktop/PWA. Built by 500+ contributors</blockquote>
+<ul class="evidence"><li>⭐ 本周 +8464 ｜ 总计 35150 ｜ TypeScript ｜ MIT</li><li>主页：https://omniroute.online</li></ul>
+<p>OmniRoute 是一个免费的 AI 网关，把 290 多个 AI 服务商、90 多个免费额度池聚合到一个统一接口后面，供使用 Claude Code、Cursor、Codex、Copilot 等编程工具的开发者接入，实现自动故障转移、避免频繁触达速率限制。相比其他 API 聚合/路由工具，它的新意在于诚实统计并实时展示"每月约 15.3 亿免费 token"的去重后真实额度、19 种路由策略，以及通过压缩算法节省 15%-95% token 消耗。</p>
+</section>
+<section class="repo"><h2>4. <a href="https://github.com/stablyai/orca">stablyai/orca</a></h2>
+<blockquote>Orca is the ADE for working with a fleet of parallel agents. Run any coding agent with your own subscription. Available on desktop, mobile and VPS.</blockquote>
+<ul class="evidence"><li>⭐ 本周 +6647 ｜ 总计 33860 ｜ TypeScript ｜ MIT</li><li>主页：https://onOrca.dev</li></ul>
+<p>Orca 是一个桌面端 AI 编排工具，可以同时运行 Claude Code、Codex、OpenCode 等多种命令行 Agent，每个 Agent 在独立的 git worktree 中并行工作。面向需要大规模并发调用编码 Agent 的"高产出开发者"，提供终端分屏、SSH 远程 worktree、移动端伴侣 App 远程监控/操控 Agent、以及在真实浏览器中点选 UI 元素直接生成 Prompt 的"设计模式"。相比单一 Agent 工具，其新意在于把多个不同厂商的 CLI Agent 统一编排、可视化比较结果并支持随时随地（含手机）介入管理。</p>
+</section>
+<section class="repo"><h2>5. <a href="https://github.com/alibaba/open-code-review">alibaba/open-code-review</a></h2>
+<blockquote>Open-source &amp; free — Battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in fine-tuned ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI &amp; Anthropic compatible.</blockquote>
+<ul class="evidence"><li>⭐ 本周 +5322 ｜ 总计 16577 ｜ Go ｜ Apache-2.0</li><li>主页：https://open-codereview.ai</li></ul>
+<p>Open Code Review（ocr）是阿里巴巴内部代码评审工具开源版，读取 Git diff 后交给可配置 LLM 驱动的 Agent 进行结构化、行级精度的代码评审，面向需要在 CI/CD 或本地为团队做自动化代码审查的开发者和企业。相比 Claude Code 等通用 Agent 直接做评审，它采用"确定性工程 + Agent"混合架构——用工程逻辑保证文件筛选、分组、规则匹配等关键步骤不出错，只让 Agent 负责动态决策，官方 benchmark 显示在同等模型下精度和 F1 更高、token 消耗仅约九分之一。</p>
+</section>
+<section class="repo"><h2>6. <a href="https://github.com/citrolabs/ego-lite">citrolabs/ego-lite</a></h2>
+<blockquote>The fastest browser for AI agents to run browser automation, built for sharing your logged-in browser state with your AI agents, like Codex or Claude Code, without disturbing you. Zero cost, zero config.</blockquote>
+<ul class="evidence"><li>⭐ 本周 +5037 ｜ 总计 6517 ｜ JavaScript ｜ MIT</li><li>主页：https://lite.ego.app</li></ul>
+<p>ego lite 是一款专为 AI Agent 与人类共同使用而设计的 macOS 浏览器，让 Agent 在独立的"Space"中并行执行浏览器自动化任务，同时不干扰用户自己的标签页，并直接复用用户的 Chrome 登录态/Cookie。面向使用 Claude Code、Codex、Cursor 等编码 Agent 做网页自动化的开发者，通过 ego-browser 技能以 JavaScript 函数方式暴露浏览器能力，让 Agent 一次性写代码完成多步操作而非反复调用命令行。相比 Browser-Use、Vercel agent-browser 等自动化框架或 ChatGPT Atlas、Comet 等内置 Agent 的浏览器，其新意在于"一个浏览器、人机共享工作区"，官方 benchmark 称复杂任务可提速最高 2.5 倍且 token 消耗更低。</p>
+</section>
+<section class="repo"><h2>7. <a href="https://github.com/tirth8205/code-review-graph">tirth8205/code-review-graph</a></h2>
+<blockquote>Local-first code intelligence graph for MCP and CLI. Builds a persistent map of your codebase so AI coding tools read only what matters, with benchmarked context reductions on reviews and large-repo workflows.</blockquote>
+<ul class="evidence"><li>⭐ 本周 +2061 ｜ 总计 27774 ｜ Python ｜ MIT</li><li>主页：https://code-review-graph.com</li></ul>
+<p>一个通过 Tree-sitter 为代码库构建结构化图谱、并增量追踪变更的工具，目的是让 AI 编程助手（通过 MCP 协议）在做代码审查/理解任务时只读取真正相关的部分，而不是反复扫描整个仓库。主要面向使用 Claude Code、Cursor、Codex 等 AI 编程工具的开发者，一条命令即可自动检测并配置多个平台。相比同类方案的新意在于用结构化增量索引大幅降低 AI 审查代码时消耗的 token（README 中给出 38x 到 528x 的压缩比）。</p>
+</section>
+<section class="repo"><h2>8. <a href="https://github.com/infiniflow/ragflow">infiniflow/ragflow</a></h2>
+<blockquote>RAGFlow is a leading open-source Retrieval-Augmented Generation (RAG) engine that fuses cutting-edge RAG with Agent capabilities to create a superior context layer for LLMs</blockquote>
+<ul class="evidence"><li>⭐ 本周 +698 ｜ 总计 86445 ｜ Go ｜ Apache-2.0</li><li>主页：https://ragflow.io</li></ul>
+<p>RAGFlow 是一个基于深度文档理解的开源 RAG（检索增强生成）引擎，用于把企业内部各种格式的文档转化为可被大模型精准检索和引用的知识库。面向需要构建企业级问答/知识管理系统的开发者和公司，提供云服务、Docker 自托管等多种部署方式。相比一般 RAG 框架，其亮点在于强调对复杂文档结构（表格、版面等）的深度解析质量以及可追溯的引用来源，是该赛道上较受关注的开源项目。</p>
+</section>
+<section class="repo"><h2>9. <a href="https://github.com/microsoft/agent-governance-toolkit">microsoft/agent-governance-toolkit</a></h2>
+<blockquote>AI Agent Governance Toolkit — Policy enforcement, zero-trust identity, execution sandboxing, and reliability engineering for autonomous AI agents. Covers 10/10 OWASP Agentic Top 10.</blockquote>
+<ul class="evidence"><li>⭐ 本周 +614 ｜ 总计 5497 ｜ Python ｜ MIT</li></ul>
+<p>微软出品的一个面向生产环境 AI Agent 的治理工具包，提供策略执行、身份认证、沙箱隔离和 SRE 能力，解决"这个操作是否被允许""是哪个 Agent 做的""能否留下可审计证据"三大问题。主要面向要把自主 AI Agent 部署到生产环境、需要满足合规和安全审计要求的企业和开发团队，支持任意框架，一条 pip install 即可接入。相比"靠提示词约束 Agent 行为"的做法，它强调用真正的控制平面（而非"礼貌地要求模型遵守规则"）来管控 Agent 权限与行为，并覆盖 OWASP Agentic Top 10 等安全框架。</p>
+</section>
+<section class="repo"><h2>10. <a href="https://github.com/MoonshotAI/kimi-code">MoonshotAI/kimi-code</a></h2>
+<blockquote>Kimi Code CLI — The Starting Point for Next-Gen Agents</blockquote>
+<ul class="evidence"><li>⭐ 本周 +1023 ｜ 总计 5777 ｜ TypeScript ｜ MIT</li><li>主页：https://moonshotai.github.io/kimi-code/</li></ul>
+<p>Kimi Code CLI 是月之暗面（Moonshot AI）推出的终端 AI 编程 Agent，可以读写代码、执行 shell 命令、搜索文件、抓取网页并根据反馈自主决定下一步操作，默认搭配 Kimi 模型，也可配置其他兼容的模型服务商。面向习惯在终端里工作、需要长时间专注 Agent 会话的开发者，采用单文件二进制分发、无需 Node.js 环境。相比同类 CLI Agent 工具的新意在于支持视频输入（可直接丢入录屏/演示视频供 Agent"观看"理解需求）、对话式的 MCP 配置、内置多个专用子 Agent 并支持通过 Agent Client Protocol 直接接入 Zed/JetBrains 等编辑器。</p></section>
+
+  <nav class="pager"><a href="2026-08-01-ai-agent.html">← 更新一期（2026-08-01）</a></nav>
+  <footer class="foot">
+    <a href="../index.html">← 返回首页</a>
+    <a href="../archive.html">历史归档</a>
+  </footer>
+</div>
+
+</body>
+</html>
