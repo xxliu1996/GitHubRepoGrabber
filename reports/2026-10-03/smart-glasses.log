@@ -1,0 +1,5 @@
+[grab] theme 'smart-glasses' (AI 智能眼镜): limit=15 min_stars=30
+[grab] trending/all: 19 repos
+[grab] search topic:smart-glasses: 15 repos
+[grab] search topic:ar-glasses: 7 repos
+[grab] search topic:smartglasses: 6 repos

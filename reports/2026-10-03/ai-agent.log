@@ -1,0 +1,7 @@
+[grab] theme 'ai-agent' (AI / Agent): limit=20 min_stars=200
+[grab] trending/all: 19 repos
+[grab] trending/python: 11 repos
+[grab] trending/typescript: 16 repos
+[grab] trending/jupyter-notebook: 17 repos
+[grab] trending/rust: 19 repos
+[grab] trending/go: 22 repos
