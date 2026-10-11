@@ -1,0 +1,68 @@
+# GitHub 周报：AR / VR（2026-10-04 – 2026-10-11）
+
+本周 AR/VR 赛道整体动静不大，没有爆款新项目涌现，上榜的多是长期维护的老牌引擎与工具在稳步迭代，因此这批条目的星标都来自搜索估算、而非单周实测涨星，不代表"本周新增"。不过有一条趋势值得记下：XR 正在和 AI 合流。Google 把 XR Blocks 做成"AI 原生"的 WebXR 原型库、直接内置 Gemini 多模态理解，ViroReact 则给自己配了 MCP 服务器让编码 Agent 实时读懂它的跨平台 API——这说明"用 AI 帮你搭 XR 场景"正成为新的入口。另一边，Linux 阵营的无线串流与桌面叠加（ALVR、wayvr）持续活跃，高斯泼溅（supersplat-viewer）继续蚕食传统 3D 展示的地盘，Web 端则靠声明式组件（model-viewer）把 AR 预览的门槛压到一个 HTML 标签。
+
+---
+
+## 1. [google/xrblocks](https://github.com/google/xrblocks)
+
+> XR Blocks is a lightweight WebXR + AI library for rapidly prototyping advanced AI + XR experiences.
+
+- ⭐ 总计 484 ⭐（本周增量未测得）｜ TypeScript ｜ Apache-2.0
+- 主页：https://xrblocks.github.io
+
+Google 推出的轻量级跨平台 JS 库（基于 three.js），用于快速搭建"AI + XR"沉浸式应用原型，内置手势/头动识别、世界理解、统一交互与空间 UI。最大新意在于"AI 原生"——直接接入 Gemini 做多模态理解和实时对话，并向 AI Agent 暴露带语义树的场景上下文，专为 vibe coding 式的快速原型设计，可跑在 Android XR 设备与桌面 Chrome 上。
+
+---
+
+## 2. [ReactVision/viro](https://github.com/ReactVision/viro)
+
+> ViroReact is the leading library for building AR and VR experiences and applications using React Native and Expo.
+
+- ⭐ 总计 1832 ⭐（本周增量未测得）｜ TypeScript ｜ MIT
+- 主页：https://reactvision.xyz/viro-react
+
+用 React Native 一套 TypeScript 代码构建 AR/VR 体验，一次编写即可覆盖 iOS、Android、Meta Quest、visionOS 和 Web，开箱提供平面检测、云锚点、PBR 渲染、物理引擎等。面向不想另学新引擎的 React Native/Expo 开发者，近期新特色是提供持续更新的 MCP 服务器，可接入 Claude、Cursor 等编码 Agent 让 AI 实时理解其跨平台 API。
+
+---
+
+## 3. [alvr-org/ALVR](https://github.com/alvr-org/ALVR)
+
+> Stream VR games from your PC to your headset via Wi-Fi
+
+- ⭐ 总计 7986 ⭐（本周增量未测得）｜ Rust ｜ MIT
+
+开源串流工具，通过 Wi-Fi 把 PC 上的 SteamVR 游戏画面实时推送到独立 VR 头显，面向有高性能 PC、想无线畅玩 PCVR 的一体机用户。它是原 ALVR 的社区活跃分支，突出之处在于兼容面极广——Apple Vision Pro、Quest 全系、Pico、Vive Focus 乃至手机 VR 都支持，且同时覆盖 Windows 和 Linux。
+
+---
+
+## 4. [wayvr-org/wayvr](https://github.com/wayvr-org/wayvr)
+
+> Your way to enjoy VR on Linux. Run apps inside VR & access your Wayland/X11 screens from Monado/WiVRn/SteamVR.
+
+- ⭐ 总计 1434 ⭐（本周增量未测得）｜ Rust ｜ GPL-3.0
+- 主页：https://wayvr.org
+
+面向 Linux VR 用户的轻量级 OpenXR/OpenVR 叠加层（前身 WlxOverlay-S），让你戴着头显把 Wayland/X11 桌面和应用搬进 3D 虚拟空间，支持 Monado、WiVRn、SteamVR 等多种运行时。主打对性能影响极小、能与 VR 游戏并行运行，UI 与渲染刻意保持简单高效同时保留高度可定制性。
+
+---
+
+## 5. [playcanvas/supersplat-viewer](https://github.com/playcanvas/supersplat-viewer)
+
+> User-friendly, high-performance viewer for 3D Gaussian splats
+
+- ⭐ 总计 584 ⭐（本周增量未测得）｜ TypeScript ｜ MIT
+- 主页：https://superspl.at
+
+SuperSplat 高斯泼溅编辑器的官方网页查看器，加载浏览 `.ply`、`.sog` 等泼溅场景，编译产物是自包含的纯静态网站，便于直接嵌入或分享。默认优先用 WebGPU（不支持时回退 WebGL），并通过丰富的 URL 参数控制场景、天空盒、碰撞体、多语言 UI 乃至 AR/VR 行为，几乎无需写代码即可配置。
+
+---
+
+## 6. [google/model-viewer](https://github.com/google/model-viewer)
+
+> Easily display interactive 3D models on the web and in AR!
+
+- ⭐ 总计 8269 ⭐（本周增量未测得）｜ TypeScript ｜ Apache-2.0
+- 主页：https://modelviewer.dev
+
+Google 维护的 `<model-viewer>` Web Component 及配套项目（含后处理特效插件、文档站与在线编辑器 space-opera），用一个 HTML 标签就能在网页上响应式展示和交互 glTF/GLB 模型。面向不想深入 WebGL/three.js 的网页开发者，把加载、相机控制、环境光照乃至 AR 查看封装成声明式的标准 Web 组件，开箱即用。

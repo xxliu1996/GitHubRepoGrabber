@@ -1,5 +1,157 @@
 [
   {
+    "date": "2026-10-10",
+    "theme": "ai-agent",
+    "theme_title": "AI / Agent",
+    "title": "GitHub 周报：AI / Agent（2026-10-04 – 2026-10-11）",
+    "count": 10,
+    "slug": "2026-10-10-ai-agent",
+    "picks": [
+      {
+        "name": "lexmount/moli",
+        "url": "https://github.com/lexmount/moli"
+      },
+      {
+        "name": "mattpocock/skills",
+        "url": "https://github.com/mattpocock/skills"
+      },
+      {
+        "name": "Panniantong/Agent-Reach",
+        "url": "https://github.com/Panniantong/Agent-Reach"
+      },
+      {
+        "name": "heygen-com/hyperframes",
+        "url": "https://github.com/heygen-com/hyperframes"
+      },
+      {
+        "name": "thedotmack/claude-mem",
+        "url": "https://github.com/thedotmack/claude-mem"
+      },
+      {
+        "name": "anthropics/knowledge-work-plugins",
+        "url": "https://github.com/anthropics/knowledge-work-plugins"
+      },
+      {
+        "name": "tashfeenahmed/freellmapi",
+        "url": "https://github.com/tashfeenahmed/freellmapi"
+      },
+      {
+        "name": "earthtojake/text-to-cad",
+        "url": "https://github.com/earthtojake/text-to-cad"
+      },
+      {
+        "name": "mvschwarz/openrig",
+        "url": "https://github.com/mvschwarz/openrig"
+      },
+      {
+        "name": "JuliusBrussee/caveman",
+        "url": "https://github.com/JuliusBrussee/caveman"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-10",
+    "theme": "ar-vr",
+    "theme_title": "AR / VR",
+    "title": "GitHub 周报：AR / VR（2026-10-04 – 2026-10-11）",
+    "count": 6,
+    "slug": "2026-10-10-ar-vr",
+    "picks": [
+      {
+        "name": "google/xrblocks",
+        "url": "https://github.com/google/xrblocks"
+      },
+      {
+        "name": "ReactVision/viro",
+        "url": "https://github.com/ReactVision/viro"
+      },
+      {
+        "name": "alvr-org/ALVR",
+        "url": "https://github.com/alvr-org/ALVR"
+      },
+      {
+        "name": "wayvr-org/wayvr",
+        "url": "https://github.com/wayvr-org/wayvr"
+      },
+      {
+        "name": "playcanvas/supersplat-viewer",
+        "url": "https://github.com/playcanvas/supersplat-viewer"
+      },
+      {
+        "name": "google/model-viewer",
+        "url": "https://github.com/google/model-viewer"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-10",
+    "theme": "robotics",
+    "theme_title": "机器人",
+    "title": "GitHub 周报：机器人（2026-10-04 – 2026-10-11）",
+    "count": 6,
+    "slug": "2026-10-10-robotics",
+    "picks": [
+      {
+        "name": "dexmal/opendm",
+        "url": "https://github.com/dexmal/opendm"
+      },
+      {
+        "name": "RLinf/RLinf",
+        "url": "https://github.com/RLinf/RLinf"
+      },
+      {
+        "name": "newton-physics/newton",
+        "url": "https://github.com/newton-physics/newton"
+      },
+      {
+        "name": "KingKongRobotics/jumper",
+        "url": "https://github.com/KingKongRobotics/jumper"
+      },
+      {
+        "name": "makerspet/oomwoo",
+        "url": "https://github.com/makerspet/oomwoo"
+      },
+      {
+        "name": "rerun-io/rerun",
+        "url": "https://github.com/rerun-io/rerun"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-10",
+    "theme": "smart-glasses",
+    "theme_title": "AI 智能眼镜",
+    "title": "GitHub 周报：AI 智能眼镜（2026-10-04 – 2026-10-11）",
+    "count": 6,
+    "slug": "2026-10-10-smart-glasses",
+    "picks": [
+      {
+        "name": "Mentra-Community/MentraOS",
+        "url": "https://github.com/Mentra-Community/MentraOS"
+      },
+      {
+        "name": "hkust-spark/xg-glass-sdk",
+        "url": "https://github.com/hkust-spark/xg-glass-sdk"
+      },
+      {
+        "name": "brilliantlabsAR/halo-firmware",
+        "url": "https://github.com/brilliantlabsAR/halo-firmware"
+      },
+      {
+        "name": "rayl15/OpenVision",
+        "url": "https://github.com/rayl15/OpenVision"
+      },
+      {
+        "name": "zjunlp/LightMem-Ego",
+        "url": "https://github.com/zjunlp/LightMem-Ego"
+      },
+      {
+        "name": "BasedHardware/omi",
+        "url": "https://github.com/BasedHardware/omi"
+      }
+    ]
+  },
+  {
     "date": "2026-09-26",
     "theme": "ai-agent",
     "theme_title": "AI / Agent",

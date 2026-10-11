@@ -1,0 +1,68 @@
+# GitHub 周报：机器人（2026-10-04 – 2026-10-11）
+
+本周机器人赛道的热度集中在"具身智能的训练与仿真栈"上，上榜项目的星标均为搜索估算、非单周实测，但技术指向很一致：大家在抢着把 VLA（视觉-语言-动作）大模型跑通、训好、评准。Dexmal 开源了原生具身建模的 VLA 基座模型 OpenDM，RLinf 则把配套的强化学习基础设施做成 PyTorch 生态项目，Newton 这类 GPU 加速物理仿真引擎（迪士尼/DeepMind/NVIDIA 发起）继续为大规模训练提供算力地基——一条从模型、训练到仿真的完整开源工具链正在成型。另一边，实体硬件的"平民化"也很热闹：会话式搭建的螃蟹机器人 jumper、全开源可 3D 打印的扫地机器人 oomwoo，都在把机器人开发门槛往创客层拉。贯穿始终的工程底座是 rerun 这类多模态数据层——当训练数据越来越多模态、越来越高速率，先解决"看得见、查得动、喂得进去"成了共识。
+
+---
+
+## 1. [dexmal/opendm](https://github.com/dexmal/opendm)
+
+> An Open-World Foundation Model for General-Purpose Embodied Intelligence.
+
+- ⭐ 总计 2220 ⭐（本周增量未测得）｜ Python ｜ Apache-2.0
+
+Dexmal 开源的新一代视觉-语言-动作大模型 DM0.5，面向开放世界机器人控制，随仓库提供模型权重、训练/推理脚本、数据集注册示例与评测流程。相比 Pi0、GR00T 等同类，它主打原生具身建模，强调开放式指令、长程任务、动态干扰和多本体机器人控制，并已在 RoboDojo、RoboColiseum 等多个基准上登顶。
+
+---
+
+## 2. [RLinf/RLinf](https://github.com/RLinf/RLinf)
+
+> RLinf: Reinforcement Learning Infrastructure for Embodied and Agentic AI
+
+- ⭐ 总计 5477 ⭐（本周增量未测得）｜ Python ｜ Apache-2.0
+- 主页：https://rlinf.readthedocs.io/en/latest/
+
+面向具身智能与 Agent AI 的开源强化学习基础设施，名字里的 inf 兼指"基础设施"与"无限/开放式学习"，现已纳入 PyTorch 生态。相比一般 RL 框架，它特色在于灵活可扩展的系统设计、统一的机器人接口（可对接真机、仿真与遥操作），并原生支持 π₀-FAST、π₀.₅、Cosmos3 等前沿具身/世界模型及国产 GPU。
+
+---
+
+## 3. [newton-physics/newton](https://github.com/newton-physics/newton)
+
+> An open-source, GPU-accelerated physics simulation engine built upon NVIDIA Warp, specifically targeting roboticists and simulation researchers.
+
+- ⭐ 总计 5743 ⭐（本周增量未测得）｜ Python ｜ Apache-2.0
+- 主页：https://newton-physics.github.io/newton/stable/
+
+基于 NVIDIA Warp 的 GPU 加速物理仿真引擎，由迪士尼研究院、Google DeepMind 和 NVIDIA 共同发起，现为社区维护的 Linux 基金会项目，专服务机器人学者与仿真研究者。它扩展并泛化了已废弃的 warp.sim，以 MuJoCo Warp 为主要后端，新意在于全程 GPU 计算、原生 OpenUSD 支持、可微分性以及高度可扩展，便于大规模机器人仿真快速迭代。
+
+---
+
+## 4. [KingKongRobotics/jumper](https://github.com/KingKongRobotics/jumper)
+
+> 🦀 Jumper — an crab robot.
+
+- ⭐ 总计 2318 ⭐（本周增量未测得）｜ Python ｜ Apache-2.0
+- 主页：https://kingkong.tech/jumper
+
+一个 22 自由度螃蟹形机器人的 AI 创作工具箱，让用户在 AI 编程助手里用一句自然语言完成机器人的外观设计、运动训练和场景搭建，并分别导出 `.skin`、`.app`、`.map` 文件。它把 mjlab、MuJoCo、rsl_rl 这套训练流程包装成"对话式"工作流，相比传统需要手写代码和 RL 管线的机器人开发，门槛大幅降低。
+
+---
+
+## 5. [makerspet/oomwoo](https://github.com/makerspet/oomwoo)
+
+> Open-source vacuum robot cleaner
+
+- ⭐ 总计 11439 ⭐（本周增量未测得）｜ Python ｜ Apache-2.0
+- 主页：https://oomwoo.com
+
+完全开源、可自己动手搭建的家用扫地机器人，基于树莓派、3D 打印、Arduino、ESP32、ROS2/Nav2 和 Home Assistant，用廉价 2D 激光雷达实现建图与自主导航，主打本地运行、不依赖云、无厂商锁定。与市售扫地机的最大差异在于软硬件固件全开源、底盘可 3D 打印可魔改（目前尚不能真机组装，但已可在 Gazebo 仿真中运行）。
+
+---
+
+## 6. [rerun-io/rerun](https://github.com/rerun-io/rerun)
+
+> Visualize, query, and stream to train on multimodal robotics data.
+
+- ⭐ 总计 11581 ⭐（本周增量未测得）｜ Rust ｜ Apache-2.0
+- 主页：https://rerun.io/
+
+面向"物理 AI"的多模态数据层，能摄入图像、点云、时间序列、关节状态、视频等多速率数据，内置实时同步可视化查看器，同一份数据还可用 dataframe 或 SQL 查询并直接流式喂给训练。用 Rust 构建、基于专为多速率物理数据设计的列式分块存储，把日志、查询、可视化和喂数据打通成一条无需导出中间文件的统一管线，提供 Python/Rust/C++ SDK。
