@@ -1,0 +1,112 @@
+# GitHub 周报：AI / Agent（2026-10-11 – 2026-10-18）
+
+本周的主线是一句话：大家不再忙着造新 Agent，而是忙着给 Agent"补地基"。涨得最猛的清一色是围绕编码 Agent 的配套层——可复用的 skills、上下文压缩、跨会话记忆、官方插件市场、乃至把 Agent 行为拿去独立审计的工具。换句话说，当 Claude Code / Codex / Cursor 这类 harness 成了默认底座，竞争焦点就从"能不能跑"转向"怎么跑得省、跑得稳、跑得可信"。另一条暗线是 Agent 的能力外延：渗透测试、CAD、视频渲染、本地检索，正把通用 Agent 推向一个个垂直专业场景。
+
+---
+
+## 1. [mattpocock/skills](https://github.com/mattpocock/skills)
+
+> Skills for Real Engineers. Straight from my .agents directory.
+
+- ⭐ 本周 +11272 ｜ 总计 295226 ｜ Shell ｜ MIT
+- 主页：https://aihero.dev/skills
+
+一套面向 AI 编程助手（Claude Code、Copilot、Codex 等）的可复用 skills 集合，专门对治 AI 写代码的老毛病：需求对不齐、输出啰嗦、代码有 bug、架构逐渐腐化。与那些想接管整个开发流程的大框架不同，它刻意做得小巧、可改、可组合，强调先对齐（如先访谈再动手）、沉淀领域术语、再用 TDD 和代码评审收口，把工程经验编码成可重复的实践，而不是取代人的判断。
+
+---
+
+## 2. [cathrynlavery/diagram-design](https://github.com/cathrynlavery/diagram-design)
+
+> Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, and Pi. 44 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.
+
+- ⭐ 本周 +8382 ｜ 总计 57104 ｜ HTML ｜ MIT
+- 主页：https://diagramdesign.dev
+
+一个 agent skill，用自然语言描述即可生成出版级图表，输出是自带样式、无外部依赖的 HTML+SVG，覆盖架构图、流程图、甘特图、桑基图等 45 种类型。相比 Mermaid（通用但样式一般）和 draw.io（可编辑但费时），它走中间路线：AI 自动选型、统一克制的视觉风格、能提取站点品牌色与字体套用，还能把已有的 draw.io / Mermaid / Excalidraw 文件按这套设计体系重绘。
+
+---
+
+## 3. [ifixai-ai/iFixAi](https://github.com/ifixai-ai/iFixAi)
+
+> Independent Auditing of AI Agents. Run by human or the agent itself, to answer the most crucial question in the AI Agent Economy. Is the agent doing what is supposed to do? With iFixAi you can have this answer in less than 120 seconds.
+
+- ⭐ 本周 +6895 ｜ 总计 29158 ｜ Python ｜ Apache-2.0
+- 主页：https://www.ifixai.ai
+
+一个开源的 AI Agent 审计/诊断工具，围绕捏造、操纵、欺骗、不可预测、不透明五大维度跑最多约 60 项检查并给出 A–F 评级，用来回答"这个 Agent 是否在按预期行事"。面向部署生产 Agent 的团队、风控合规人员以及受 EU AI Act、NIST 等监管约束的组织。最有意思的是"独立第三方评审"机制——要求被测方和裁判方用两个不同厂商的 API Key，避免自评偏见，并提供 CLI、CI/CD、原生插件三种接入方式。
+
+---
+
+## 4. [heygen-com/hyperframes](https://github.com/heygen-com/hyperframes)
+
+> Write HTML. Render video. Built for agents.
+
+- ⭐ 本周 +5639 ｜ 总计 66072 ｜ TypeScript ｜ Apache-2.0
+- 主页：https://hyperframes.dev
+
+把 HTML/CSS/媒体/动画渲染成确定性 MP4 的视频框架：用带时间属性的标准 HTML 加可定位动画（GSAP、CSS、Lottie 等），再用 CLI 本地或云端渲染。主要面向 AI 编码 Agent 及自动化视频流水线，可通过 skill 与 Claude、Cursor 等助手集成。相比 Remotion，它用原生 HTML 而非 React 组件、无需构建步骤、更适合 Agent 直接编写，渲染结果可复现且开源无按次收费。
+
+---
+
+## 5. [vxcontrol/pentagi](https://github.com/vxcontrol/pentagi)
+
+> Fully autonomous AI Agents system capable of performing complex penetration testing tasks
+
+- ⭐ 本周 +5538 ｜ 总计 30928 ｜ Go ｜ MIT
+- 主页：https://pentagi.com
+
+一套全自主的多智能体系统，用 AI 自动执行渗透测试这类复杂安全评估任务，面向安全工程师、渗透测试人员和需要自动化安全测试的团队。相比单体安全扫描工具，它以多 Agent 协作完成多步攻击链推理，技术栈为 Go + React + GraphQL，支持 OpenAI / Anthropic 等多家模型，并自带 Docker 部署与 Langfuse 可观测性等面向生产的工程能力。
+
+---
+
+## 6. [mksglu/context-mode](https://github.com/mksglu/context-mode)
+
+> Context window optimization for AI coding agents. Sandboxes tool output (98% reduction), persists session memory, and enforces routing across 17 platforms via MCP + hooks.
+
+- ⭐ 本周 +4438 ｜ 总计 30543 ｜ TypeScript ｜ 其他许可
+- 主页：https://context-mode.com
+
+一个专门给 AI 编码 Agent 省上下文的 MCP 服务器：把工具输出做沙箱化压缩（如 315KB 的 Playwright 快照压到 5.4KB，省 98%）、用 SQLite+FTS5 持久化会话状态以便 compact 后精准续接、并引导 Agent 写脚本本地分析而非把几十个文件读进上下文。新意在于"沙箱优先"只让处理后的结果进上下文，加上跨 compaction 的持久会话跟踪，补上了无状态 Agent 的短板，覆盖 Claude Code、Cursor、Gemini CLI 等 17 个平台。
+
+---
+
+## 7. [xerj-org/xerj](https://github.com/xerj-org/xerj)
+
+> XERJ is the new way for AI to search data. Its autoindex capability activates agents to know your data without the token waste of grep (1974 tool). One command indexes code, docs, logs and PDFs for search, RAG, security audits and agent memory, using 40x fewer tokens than grep.
+
+- ⭐ 本周 +4277 ｜ 总计 7903 ｜ Rust ｜ Apache-2.0
+- 主页：https://xerj.org
+
+一个本地优先的 AI 搜索引擎，自动为代码、文档、日志、PDF 建索引，让 Agent 用检索代替逐文件阅读，从而大幅节省 token。面向使用 AI 编码助手的开发者、安全审计和日志团队。亮点是零配置自动建索引、兼容 Elasticsearch REST API（可作为低成本平替直接接入现有工具），并以单个无依赖的静态二进制支持离线/气隙部署。
+
+---
+
+## 8. [anthropics/claude-plugins-official](https://github.com/anthropics/claude-plugins-official)
+
+> Official, Anthropic-managed directory of high quality Claude Code Plugins.
+
+- ⭐ 本周 +3581 ｜ 总计 41894 ｜ Python ｜ Apache-2.0
+- 主页：https://code.claude.com/docs/en/plugins
+
+由 Anthropic 官方维护的 Claude Code 插件目录（市场），用一条 `/plugin install` 即可发现并安装经审核的插件，涵盖 MCP 服务器、斜杠命令、Agent 与 Skills。面向 Claude Code 用户及想分发插件的团队和第三方开发者。不同于零散的社区插件，它采用官方/外部双层目录、强制不可变插件名（配迁移映射）和统一清单规范，主打"官方背书 + 质量安全把关"。
+
+---
+
+## 9. [lyogavin/airllm](https://github.com/lyogavin/airllm)
+
+> AirLLM 2.8T LLM inference with single 4GB GPU
+
+- ⭐ 本周 +3364 ｜ 总计 39192 ｜ Jupyter Notebook ｜ Apache-2.0
+
+一个让超大模型在小显存硬件上跑推理的库，核心思路是显存里一次只放一层、其余层从磁盘流式加载，因此无需量化、蒸馏或剪枝即可运行（宣称 70B 模型可跑在 4GB 显卡上）。与常规"压缩模型换显存"的做法不同，它把瓶颈从算力转到磁盘加载，并新增分块量化加速和在极小显存上微调大模型的能力，通过统一 AutoModel 接口兼容 Llama、Qwen、DeepSeek 等主流模型。
+
+---
+
+## 10. [thedotmack/claude-mem](https://github.com/thedotmack/claude-mem)
+
+> Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions.
+
+- ⭐ 本周 +2347 ｜ 总计 101441 ｜ TypeScript ｜ Apache-2.0
+- 主页：https://claude-mem.ai
+
+一个持久化记忆系统，自动捕捉 Agent 每次会话的操作、用 AI 压缩成语义摘要，并在未来会话中回注相关上下文，让 Claude Code 等助手跨会话记住项目与决策。差异点在于：靠生命周期 Hook 自动采集无需人工干预、采用三层"渐进式披露"检索（先取精简结果再按需拉详情，省约 10 倍 token）、全文检索加向量的混合搜索，以及本地优先加可选云同步和隐私标签过滤。

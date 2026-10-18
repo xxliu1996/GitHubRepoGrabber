@@ -1,5 +1,157 @@
 [
   {
+    "date": "2026-10-17",
+    "theme": "ai-agent",
+    "theme_title": "AI / Agent",
+    "title": "GitHub 周报：AI / Agent（2026-10-11 – 2026-10-18）",
+    "count": 10,
+    "slug": "2026-10-17-ai-agent",
+    "picks": [
+      {
+        "name": "mattpocock/skills",
+        "url": "https://github.com/mattpocock/skills"
+      },
+      {
+        "name": "cathrynlavery/diagram-design",
+        "url": "https://github.com/cathrynlavery/diagram-design"
+      },
+      {
+        "name": "ifixai-ai/iFixAi",
+        "url": "https://github.com/ifixai-ai/iFixAi"
+      },
+      {
+        "name": "heygen-com/hyperframes",
+        "url": "https://github.com/heygen-com/hyperframes"
+      },
+      {
+        "name": "vxcontrol/pentagi",
+        "url": "https://github.com/vxcontrol/pentagi"
+      },
+      {
+        "name": "mksglu/context-mode",
+        "url": "https://github.com/mksglu/context-mode"
+      },
+      {
+        "name": "xerj-org/xerj",
+        "url": "https://github.com/xerj-org/xerj"
+      },
+      {
+        "name": "anthropics/claude-plugins-official",
+        "url": "https://github.com/anthropics/claude-plugins-official"
+      },
+      {
+        "name": "lyogavin/airllm",
+        "url": "https://github.com/lyogavin/airllm"
+      },
+      {
+        "name": "thedotmack/claude-mem",
+        "url": "https://github.com/thedotmack/claude-mem"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-17",
+    "theme": "ar-vr",
+    "theme_title": "AR / VR",
+    "title": "GitHub 周报：AR / VR（2026-10-11 – 2026-10-18）",
+    "count": 6,
+    "slug": "2026-10-17-ar-vr",
+    "picks": [
+      {
+        "name": "alvr-org/ALVR",
+        "url": "https://github.com/alvr-org/ALVR"
+      },
+      {
+        "name": "praydog/REFramework",
+        "url": "https://github.com/praydog/REFramework"
+      },
+      {
+        "name": "pmndrs/xr",
+        "url": "https://github.com/pmndrs/xr"
+      },
+      {
+        "name": "playcanvas/supersplat-viewer",
+        "url": "https://github.com/playcanvas/supersplat-viewer"
+      },
+      {
+        "name": "google/xrblocks",
+        "url": "https://github.com/google/xrblocks"
+      },
+      {
+        "name": "spoopyghosty0/frameport",
+        "url": "https://github.com/spoopyghosty0/frameport"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-17",
+    "theme": "robotics",
+    "theme_title": "机器人",
+    "title": "GitHub 周报：机器人（2026-10-11 – 2026-10-18）",
+    "count": 6,
+    "slug": "2026-10-17-robotics",
+    "picks": [
+      {
+        "name": "google-deepmind/mujoco",
+        "url": "https://github.com/google-deepmind/mujoco"
+      },
+      {
+        "name": "makerspet/oomwoo",
+        "url": "https://github.com/makerspet/oomwoo"
+      },
+      {
+        "name": "rerun-io/rerun",
+        "url": "https://github.com/rerun-io/rerun"
+      },
+      {
+        "name": "RLinf/RLinf",
+        "url": "https://github.com/RLinf/RLinf"
+      },
+      {
+        "name": "PhyAgentOS/PhyAgentOS-core",
+        "url": "https://github.com/PhyAgentOS/PhyAgentOS-core"
+      },
+      {
+        "name": "dexmal/opendm",
+        "url": "https://github.com/dexmal/opendm"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-17",
+    "theme": "smart-glasses",
+    "theme_title": "AI 智能眼镜",
+    "title": "GitHub 周报：AI 智能眼镜（2026-10-11 – 2026-10-18）",
+    "count": 6,
+    "slug": "2026-10-17-smart-glasses",
+    "picks": [
+      {
+        "name": "Mentra-Community/MentraOS",
+        "url": "https://github.com/Mentra-Community/MentraOS"
+      },
+      {
+        "name": "Turbo1123/Turbo-IO",
+        "url": "https://github.com/Turbo1123/Turbo-IO"
+      },
+      {
+        "name": "straff2002/OpenGlasses",
+        "url": "https://github.com/straff2002/OpenGlasses"
+      },
+      {
+        "name": "brilliantlabsAR/halo-firmware",
+        "url": "https://github.com/brilliantlabsAR/halo-firmware"
+      },
+      {
+        "name": "macedonga/visor",
+        "url": "https://github.com/macedonga/visor"
+      },
+      {
+        "name": "hkust-spark/xg-glass-sdk",
+        "url": "https://github.com/hkust-spark/xg-glass-sdk"
+      }
+    ]
+  },
+  {
     "date": "2026-10-10",
     "theme": "ai-agent",
     "theme_title": "AI / Agent",
