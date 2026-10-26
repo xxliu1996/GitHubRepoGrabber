@@ -1,5 +1,145 @@
 [
   {
+    "date": "2026-10-25",
+    "theme": "ai-agent",
+    "theme_title": "AI / Agent",
+    "title": "GitHub 周报：AI / Agent（2026-10-19 – 2026-10-26）",
+    "count": 10,
+    "slug": "2026-10-25-ai-agent",
+    "picks": [
+      {
+        "name": "cloudflare/security-audit-skill",
+        "url": "https://github.com/cloudflare/security-audit-skill"
+      },
+      {
+        "name": "stablyai/orca",
+        "url": "https://github.com/stablyai/orca"
+      },
+      {
+        "name": "Graphify-Labs/graphify",
+        "url": "https://github.com/Graphify-Labs/graphify"
+      },
+      {
+        "name": "anomalyco/opencode",
+        "url": "https://github.com/anomalyco/opencode"
+      },
+      {
+        "name": "NVIDIA/OpenShell",
+        "url": "https://github.com/NVIDIA/OpenShell"
+      },
+      {
+        "name": "akitaonrails/ai-memory",
+        "url": "https://github.com/akitaonrails/ai-memory"
+      },
+      {
+        "name": "HKUDS/CLI-Anything",
+        "url": "https://github.com/HKUDS/CLI-Anything"
+      },
+      {
+        "name": "jub0t/Concat",
+        "url": "https://github.com/jub0t/Concat"
+      },
+      {
+        "name": "TauricResearch/TradingAgents",
+        "url": "https://github.com/TauricResearch/TradingAgents"
+      },
+      {
+        "name": "Comfy-Org/ComfyUI",
+        "url": "https://github.com/Comfy-Org/ComfyUI"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-25",
+    "theme": "ar-vr",
+    "theme_title": "AR / VR",
+    "title": "GitHub 周报：AR / VR（2026-10-19 – 2026-10-26）",
+    "count": 5,
+    "slug": "2026-10-25-ar-vr",
+    "picks": [
+      {
+        "name": "spoopyghosty0/frameport",
+        "url": "https://github.com/spoopyghosty0/frameport"
+      },
+      {
+        "name": "WiVRn/WiVRn",
+        "url": "https://github.com/WiVRn/WiVRn"
+      },
+      {
+        "name": "bigmak94/GalaxyQuest",
+        "url": "https://github.com/bigmak94/GalaxyQuest"
+      },
+      {
+        "name": "nagadomi/nunif",
+        "url": "https://github.com/nagadomi/nunif"
+      },
+      {
+        "name": "BabylonJS/Babylon.js",
+        "url": "https://github.com/BabylonJS/Babylon.js"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-25",
+    "theme": "robotics",
+    "theme_title": "机器人",
+    "title": "GitHub 周报：机器人（2026-10-19 – 2026-10-26）",
+    "count": 5,
+    "slug": "2026-10-25-robotics",
+    "picks": [
+      {
+        "name": "KingKongRobotics/jumper",
+        "url": "https://github.com/KingKongRobotics/jumper"
+      },
+      {
+        "name": "PhyAgentOS/PhyAgentOS-core",
+        "url": "https://github.com/PhyAgentOS/PhyAgentOS-core"
+      },
+      {
+        "name": "commaai/openpilot",
+        "url": "https://github.com/commaai/openpilot"
+      },
+      {
+        "name": "google-deepmind/mujoco",
+        "url": "https://github.com/google-deepmind/mujoco"
+      },
+      {
+        "name": "AtsushiSakai/PythonRobotics",
+        "url": "https://github.com/AtsushiSakai/PythonRobotics"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-25",
+    "theme": "smart-glasses",
+    "theme_title": "AI 智能眼镜",
+    "title": "GitHub 周报：AI 智能眼镜（2026-10-19 – 2026-10-26）",
+    "count": 5,
+    "slug": "2026-10-25-smart-glasses",
+    "picks": [
+      {
+        "name": "yjeanrenaud/yj_nearbyglasses",
+        "url": "https://github.com/yjeanrenaud/yj_nearbyglasses"
+      },
+      {
+        "name": "v-modal/vmodal_sdk_smartglass",
+        "url": "https://github.com/v-modal/vmodal_sdk_smartglass"
+      },
+      {
+        "name": "Iam5tillLearning/OpenSource-Ai-Glasses",
+        "url": "https://github.com/Iam5tillLearning/OpenSource-Ai-Glasses"
+      },
+      {
+        "name": "V4C38/spectacles-dimensional-os",
+        "url": "https://github.com/V4C38/spectacles-dimensional-os"
+      },
+      {
+        "name": "BasedHardware/omi",
+        "url": "https://github.com/BasedHardware/omi"
+      }
+    ]
+  },
+  {
     "date": "2026-10-17",
     "theme": "ai-agent",
     "theme_title": "AI / Agent",

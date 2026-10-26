@@ -1,0 +1,111 @@
+# GitHub 周报：AI / Agent（2026-10-19 – 2026-10-26）
+
+本周 Agent 赛道的关键词是「放手之前先设防」。涨星榜首是 Cloudflare 开源的安全审计 Skill，NVIDIA 也下场做了内核级策略的 Agent 沙箱：社区不再只追求 Agent 能干多少活，开始认真处理「它干的活靠不靠得住、会不会越权」。另一条主线是 Agent 的「基础设施化」。Orca 把多个编码 Agent 并排编排，ai-memory 让不同厂商的 Agent 共用一份记忆，Graphify 用知识图谱代替 grep，CLI-Anything 和 Concat 则把 GIMP、视频剪辑这类原本给人用的软件改造成 Agent 可调用的接口。单个 Agent 的能力已经不是瓶颈，瓶颈在调度、记忆、上下文和安全边界上。
+
+---
+
+## 1. [cloudflare/security-audit-skill](https://github.com/cloudflare/security-audit-skill)
+
+> A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings
+
+- ⭐ 本周 +15072 ｜ 总计 47061 ｜ JavaScript ｜ MIT
+
+Cloudflare 开源的编码 Agent 技能，把 Agent 变成按六个阶段工作的代码安全审计员：侦察、按覆盖范围排查、复核、结构化输出、独立核验、出报告。它适合想用 AI 做代码审计的开发者和安全团队。和「让 AI 找漏洞」式的提示词不同，它让多个相互隔离的 Agent 分工，每个候选漏洞都交给全新的验证者去尝试推翻，再配合覆盖台账和 JSON Schema 保证结果可追溯。它也是 Cloudflare 内部漏洞挖掘系统的起点。
+
+---
+
+## 2. [stablyai/orca](https://github.com/stablyai/orca)
+
+> Orca is the place for working with a fleet of agents (e.g. Grok Bot, Claude Code). Run any coding agent with your own subscription. Available on desktop, mobile and remote runtime.
+
+- ⭐ 本周 +9622 ｜ 总计 105931 ｜ TypeScript ｜ MIT
+- 主页：https://orca.dev
+
+跨平台的编码 Agent 调度台，可以在同一界面里并排运行 Codex、Claude Code、OpenCode 等，每个 Agent 占一个独立的 git worktree，适合同时开多个 Agent 并行开发的重度用户。它的特色是同一条提示同时发给多个 Agent，比较后合并最好的结果。它还有手机端远程指挥、在内嵌浏览器里点选 UI 元素交给 Agent 的 Design Mode，以及 SSH 远程运行，比单一的 CLI 更像一个调度中心。
+
+---
+
+## 3. [Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify)
+
+> Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.
+
+- ⭐ 本周 +6903 ｜ 总计 135334 ｜ Python ｜ Apache-2.0
+- 主页：https://www.graphify.com
+
+在 AI 编程助手里用 /graphify 调用，把代码、文档、PDF 乃至图片和视频建成一张可查询的知识图谱，让 Agent 查图而不是用 grep 翻文件，从而省 token。它适合大型代码库的开发者。和向量检索式 RAG 不同，它不用 embedding：代码部分在本地用 tree-sitter 确定性解析，数据不出本机，而且每条边都标明是「源码直读」还是「推断」得来的。
+
+---
+
+## 4. [anomalyco/opencode](https://github.com/anomalyco/opencode)
+
+> The open source coding agent.
+
+- ⭐ 本周 +5921 ｜ 总计 221558 ｜ TypeScript ｜ MIT
+- 主页：https://opencode.ai
+
+开源的终端 AI 编程 Agent，另有桌面版（Beta），面向不想被单一厂商绑定、希望自由配置模型的开发者。它内置两个可以用 Tab 一键切换的模式：拥有完整权限的 build Agent，以及默认只读、执行命令前先征求同意的 plan Agent。后者适合先摸清陌生代码库再动手。本周它仍以近 6000 星的增速，稳坐开源编码 Agent 的头部。
+
+---
+
+## 5. [NVIDIA/OpenShell](https://github.com/NVIDIA/OpenShell)
+
+> OpenShell is the safe, private runtime for autonomous AI agents.
+
+- ⭐ 本周 +3233 ｜ 总计 19892 ｜ Rust ｜ Apache-2.0
+- 主页：https://docs.nvidia.com/openshell/latest/
+
+NVIDIA 推出的自主 Agent 安全运行时，给每个 Agent 一个隔离沙箱，用声明式策略限定它能访问的文件、系统调用和网络。它面向想放手让成批 Agent 读写文件、调用 API，又不想交出数据和密钥的团队。和普通沙箱相比，它在内核层逐次强制执行策略。Agent 始终看不到真实凭据，只在发往已批准地址的请求里由系统代填。策略变更前，它还会用形式化验证找出新增的高风险权限，交给人工审批。
+
+---
+
+## 6. [akitaonrails/ai-memory](https://github.com/akitaonrails/ai-memory)
+
+> Solution for long term memory for agent coding CLIs and to facilitate handoff between different agent vendors
+
+- ⭐ 本周 +3254 ｜ 总计 13544 ｜ Rust ｜ MIT
+
+用 Rust 写的单二进制长期记忆服务，让 Claude Code、Codex、Cursor 等二十多种编码 Agent 共用一份记忆。它适合经常在工具和机器之间切换、或需要团队共享项目知识的开发者。它内置「交接」机制，换一个 Agent 也能接着干。记忆以 git 管理的普通 Markdown 保存，不依赖向量库。默认路径完全不调用 LLM，检索、衰减和去重照样能做。
+
+---
+
+## 7. [HKUDS/CLI-Anything](https://github.com/HKUDS/CLI-Anything)
+
+> "CLI-Anything: Making ALL Software Agent-Native" -- CLI-Hub: https://clianything.cc/
+
+- ⭐ 本周 +2691 ｜ 总计 57136 ｜ Python ｜ Apache-2.0
+- 主页：https://clianything.cc/
+
+输入一个软件的源码或仓库，就能按七个阶段自动生成一套完整的 CLI，让 AI Agent 能直接操作 GIMP、Blender、LibreOffice 这类原本只给人用的软件。和 GUI 自动化或简化封装的方案不同，它调用的是真实软件来渲染和处理，输出结构化 JSON。每个 CLI 还附带供 Agent 发现的 SKILL 定义，社区做好的 CLI 可以在 CLI-Hub 上一键安装。
+
+---
+
+## 8. [jub0t/Concat](https://github.com/jub0t/Concat)
+
+> The truly free, open-source, local-first, cross-platform CapCut replacement. Scriptable through a JSON-RPC API & MCP.
+
+- ⭐ 本周 +2616 ｜ 总计 11558 ｜ Rust ｜ AGPL-3.0
+- 主页：https://concat.standalones.org
+
+免费、开源、本地优先的 CapCut 替代品，支持 macOS、Windows、Linux 和 Android，覆盖自动字幕、TTS 与声音克隆、抠背景、多轨剪辑和 4K 导出。它面向短视频创作者。它基于原生 Rust 引擎和 GPU 合成，所有 AI 模型都在本地离线运行，没有水印、不用注册、不收订阅。它收进本期，是因为内置了 MCP 服务器和 JSON-RPC 接口，剪视频这件事可以直接交给 Agent。
+
+---
+
+## 9. [TauricResearch/TradingAgents](https://github.com/TauricResearch/TradingAgents)
+
+> TradingAgents: Multi-Agents LLM Financial Trading Framework
+
+- ⭐ 本周 +2461 ｜ 总计 114724 ｜ Python ｜ Apache-2.0
+- 主页：https://arxiv.org/pdf/2412.20138
+
+模仿真实交易公司分工的多 Agent 交易研究框架。基本面、情绪、新闻、技术分析师并行出报告，再由多空两方研究员辩论，最后交给交易员、风控和组合经理决策。它面向金融 AI 和量化研究者，官方明确表示仅供研究。相比单模型荐股工具，它的看点在于结构化辩论、严格按时间点取数据以避免回测「偷看未来」，以及基于 SEC EDGAR 原始申报的基本面数据。
+
+---
+
+## 10. [Comfy-Org/ComfyUI](https://github.com/Comfy-Org/ComfyUI)
+
+> The most powerful and modular diffusion model GUI, api and backend with a graph/nodes interface. The fastest local inference engine in the world.
+
+- ⭐ 本周 +4790 ｜ 总计 142965 ｜ Python ｜ GPL-3.0
+- 主页：https://www.comfy.org/
+
+用节点图搭建生成流程的 AI 创作引擎，可以生成图像、视频、3D 和音频。它面向想细调每个模型参数的视觉创作者，以及要把生成流程接进生产管线的团队。它对消费级显卡做了深度优化，靠异步权重流式加载，在 4GB 显存的机器上也能跑大型开源模型。新的 App Mode 能把复杂工作流包装成简单界面，降低了复用门槛。
