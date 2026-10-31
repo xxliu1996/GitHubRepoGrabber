@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 智能眼镜 · 2026-10-31 · GitHub 周报</title>
+<link rel="stylesheet" href="../assets/site.css">
+
+</head>
+<body>
+
+<div class="page report" style="--accent:#8a5a2b">
+  <header class="cover">
+    <a class="back" href="../index.html">← 返回首页</a>
+    <h1>GitHub 周报：AI 智能眼镜（2026-10-24 – 2026-10-31）</h1>
+    <div class="meta">
+      <span class="badge">AI 智能眼镜</span>
+      <span>2026-10-24 – 2026-10-31</span>
+      <span>6 个项目</span>
+    </div>
+    <p class="subtitle">智能眼镜固件、HUD 应用、可穿戴 AI 助手</p>
+  </header>
+
+  <div class="lede"><p>本周 AI 智能眼镜赛道呈现出极其鲜明的「去中心化与生态破壁」共识。随着各家商业眼镜硬件在日常佩戴体验上的成熟，开发者社区对大厂封闭生态、云端隐私捆绑和协议严重碎片化的反弹达到了顶峰：Visor 和 OpenGlasses 几乎同时瞄准了保有量极大的 Ray-Ban Meta，通过反向工程打通私有模型切换与本地数据保全，拒绝让佩戴者的第一人称视野沦为科技巨头的云端数据饲料；在跨端与标准化层面，香港科技大学开源的 xg-glass-sdk 试图用一套统一 API 抹平 Rokid、雷鸟、Even Realities、INMO 与 Meta 等主流设备的硬件差异；而 MentraOS、Halo-firmware 与 Turbo-IO 则分别在可穿戴操作系统、微型嵌入式固件和非官方扩展层持续深耕。AI 智能眼镜正加速摆脱单一硬件厂商的生态垄断，迈入多模型自主可选、隐私优先与跨设备互联的新阶段。</p>
+</div>
+<section class="repo"><h2>1. <a href="https://github.com/Mentra-Community/MentraOS">Mentra-Community/MentraOS</a></h2>
+<blockquote>MentraOS is the leading smart glasses OS. See live captions, stream your view, talk to AI, and capture photos hands-free on compatible glasses.</blockquote>
+<ul class="evidence"><li>⭐ 总计 2396 ⭐（本周增量未测得） ｜ TypeScript ｜ Apache-2.0</li><li>主页：https://Mentraglass.com</li></ul>
+<p>开源的智能眼镜全功能操作系统与微应用生态平台，已原生适配 Even Realities G1、雷鸟 RayNeo、Vuzix 等多款主流智能眼镜。面向智能眼镜佩戴者与可穿戴应用开发者。它为低功耗眼镜显示屏提供了统一的实时双语字幕、第一人称视角流媒体直播与端云协同多模态 AI 对话体验，并建有开放的微应用商店（Miniapp Store），免去了开发者为每款眼镜重复造轮子的困扰。</p>
+</section>
+<section class="repo"><h2>2. <a href="https://github.com/Turbo1123/Turbo-IO">Turbo1123/Turbo-IO</a></h2>
+<blockquote>雷鸟 iO / RayNeo iO 非官方 SDK：原生鸿蒙 HarmonyOS SDK/客户端、iOS 客户端及 iOS/Android 官方 App 扩展。自有模型、联网搜索、眼镜导航、录音研究、Codex 与 Web 预览，各平台能力以文档为准。面向开发者，仅供非商业学习研究；只提供源码，不提供 IPA/APK/HAP 或签名包。</blockquote>
+<ul class="evidence"><li>⭐ 总计 311 ⭐（本周增量未测得） ｜ Objective-C ｜ 其他许可</li></ul>
+<p>针对雷鸟 RayNeo iO 智能眼镜的非官方跨平台 SDK 与深度扩展项目，开放了 Android 与 iOS 双端完整源码。面向希望深度挖掘雷鸟眼镜硬件潜力的开发者与可穿戴极客。它突破了原厂封闭生态的限制，提供了可自定义的眼镜端 HUD 仪表盘、非官方插件扩展、外挂自有大语言模型、联网搜索与独立录音研究工具。</p>
+</section>
+<section class="repo"><h2>3. <a href="https://github.com/macedonga/visor">macedonga/visor</a></h2>
+<blockquote>A de-metaified Meta Glasses client.</blockquote>
+<ul class="evidence"><li>⭐ 总计 143 ⭐（本周增量未测得） ｜ Kotlin ｜ AGPL-3.0</li></ul>
+<p>面向 Ray-Ban Meta 智能眼镜的去 Meta 化开源 Android 客户端，旨在彻底替代官方 Meta AI 配套应用。面向极度看重个人隐私且不想被 Meta 云端生态绑架的眼镜用户。它通过逆向蓝牙通信协议接管眼镜数据，保证眼镜拍摄的全部照片与音视频流仅保存在手机本地，并允许将默认的 "Hey Meta" 语音助手替换为用户自定义的云端或本地大模型。</p>
+</section>
+<section class="repo"><h2>4. <a href="https://github.com/brilliantlabsAR/halo-firmware">brilliantlabsAR/halo-firmware</a></h2>
+<blockquote>Firmware for Halo, Brilliant Labs' AI glasses — Zephyr RTOS on the Alif Balletto, with a Lua runtime for on-device apps and BLE OTA updates</blockquote>
+<ul class="evidence"><li>⭐ 总计 64 ⭐（本周增量未测得） ｜ C ｜ 其他许可</li></ul>
+<p>Brilliant Labs 为其下一代轻量化 AI 眼镜 Halo 打造的开源嵌入式固件系统，基于 Zephyr RTOS 并运行于 Alif Balletto（Cortex-M55 + Ethos-U55 NPU）芯片架构。面向嵌入式工程师与可穿戴硬件极客。系统内置轻量级 Lua 运行时以支持端侧轻应用秒级开发，具备端侧硬件回声消除语音管线，并依托 MCUboot 实现了极低刷砖风险的全无线 BLE OTA 固件更新。</p>
+</section>
+<section class="repo"><h2>5. <a href="https://github.com/straff2002/OpenGlasses">straff2002/OpenGlasses</a></h2>
+<blockquote>Making Meta Ray-ban / Oakley glasses smarter. Non-Meta Model selection, agentic features, smart guidance.</blockquote>
+<ul class="evidence"><li>⭐ 总计 127 ⭐（本周增量未测得） ｜ Swift ｜ 其他许可</li><li>主页：https://testflight.apple.com/join/1dcAytte</li></ul>
+<p>让 Ray-Ban Meta / Oakley 智能眼镜更加开放智能的 iOS 开源辅助工具（Avenkin），提供第一人称视觉下的私有化 Agent 体验。面向拥有智能眼镜并希望接入高智商前沿模型的苹果生态用户。它让用户能够自由切换 Claude、OpenAI 或端侧离线模型，利用手机算力对眼镜回传的场景图像进行第一人称多模态推理与智能指引，且个人记忆与对话历史全量本地加密保存。</p>
+</section>
+<section class="repo"><h2>6. <a href="https://github.com/hkust-spark/xg-glass-sdk">hkust-spark/xg-glass-sdk</a></h2>
+<blockquote>One API for smart-glasses apps - camera, mic, display, audio - across Rokid, Meta Ray-Ban, Brilliant Labs Frame, RayNeo, Even Realities G1, INMO, Omi, and a simulator. Android, iOS, and CLI</blockquote>
+<ul class="evidence"><li>⭐ 总计 52 ⭐（本周增量未测得） ｜ Kotlin ｜ Apache-2.0</li><li>主页：https://xg.glass</li></ul>
+<p>香港科技大学 SPARK 实验室开源的跨品牌智能眼镜硬件抽象层与通用开发套件（XG Glass SDK）。面向苦于碎片化硬件 API 的智能眼镜应用开发者与高校研究团队。它通过一套统一的 API 屏蔽了 Rokid、Ray-Ban Meta、Even Realities G1、RayNeo、INMO 等数十种眼镜在麦克风、摄像头、音频和微投显示上的底层协议差异，并附带桌面模拟器，极大加速了跨设备 AI 眼镜应用的开发与测试。</p></section>
+
+  <nav class="pager"><a href="2026-10-25-smart-glasses.html">更早一期（2026-10-25）→</a></nav>
+  <footer class="foot">
+    <a href="../index.html">← 返回首页</a>
+    <a href="../archive.html">历史归档</a>
+  </footer>
+</div>
+
+</body>
+</html>

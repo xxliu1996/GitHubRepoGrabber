@@ -1,5 +1,157 @@
 [
   {
+    "date": "2026-10-31",
+    "theme": "ai-agent",
+    "theme_title": "AI / Agent",
+    "title": "GitHub 周报：AI / Agent（2026-10-24 – 2026-10-31）",
+    "count": 10,
+    "slug": "2026-10-31-ai-agent",
+    "picks": [
+      {
+        "name": "cloudflare/security-audit-skill",
+        "url": "https://github.com/cloudflare/security-audit-skill"
+      },
+      {
+        "name": "pbakaus/impeccable",
+        "url": "https://github.com/pbakaus/impeccable"
+      },
+      {
+        "name": "affaan-m/ECC",
+        "url": "https://github.com/affaan-m/ECC"
+      },
+      {
+        "name": "obra/superpowers",
+        "url": "https://github.com/obra/superpowers"
+      },
+      {
+        "name": "heygen-com/hyperframes",
+        "url": "https://github.com/heygen-com/hyperframes"
+      },
+      {
+        "name": "makecindy/cindy",
+        "url": "https://github.com/makecindy/cindy"
+      },
+      {
+        "name": "tashfeenahmed/freellmapi",
+        "url": "https://github.com/tashfeenahmed/freellmapi"
+      },
+      {
+        "name": "AgriciDaniel/claude-seo",
+        "url": "https://github.com/AgriciDaniel/claude-seo"
+      },
+      {
+        "name": "xerj-org/xerj",
+        "url": "https://github.com/xerj-org/xerj"
+      },
+      {
+        "name": "nightly-labs/openbot",
+        "url": "https://github.com/nightly-labs/openbot"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-31",
+    "theme": "ar-vr",
+    "theme_title": "AR / VR",
+    "title": "GitHub 周报：AR / VR（2026-10-24 – 2026-10-31）",
+    "count": 6,
+    "slug": "2026-10-31-ar-vr",
+    "picks": [
+      {
+        "name": "Besty0728/Unity-Skills",
+        "url": "https://github.com/Besty0728/Unity-Skills"
+      },
+      {
+        "name": "google/xrblocks",
+        "url": "https://github.com/google/xrblocks"
+      },
+      {
+        "name": "alvr-org/ALVR",
+        "url": "https://github.com/alvr-org/ALVR"
+      },
+      {
+        "name": "wayvr-org/wayvr",
+        "url": "https://github.com/wayvr-org/wayvr"
+      },
+      {
+        "name": "thefreemike31/fear-vr",
+        "url": "https://github.com/thefreemike31/fear-vr"
+      },
+      {
+        "name": "DienerTech/vectorxr",
+        "url": "https://github.com/DienerTech/vectorxr"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-31",
+    "theme": "robotics",
+    "theme_title": "机器人",
+    "title": "GitHub 周报：机器人（2026-10-24 – 2026-10-31）",
+    "count": 6,
+    "slug": "2026-10-31-robotics",
+    "picks": [
+      {
+        "name": "earthtojake/text-to-cad",
+        "url": "https://github.com/earthtojake/text-to-cad"
+      },
+      {
+        "name": "makerspet/oomwoo",
+        "url": "https://github.com/makerspet/oomwoo"
+      },
+      {
+        "name": "RLinf/RLinf",
+        "url": "https://github.com/RLinf/RLinf"
+      },
+      {
+        "name": "rerun-io/rerun",
+        "url": "https://github.com/rerun-io/rerun"
+      },
+      {
+        "name": "harvard-edge/cs249r_book",
+        "url": "https://github.com/harvard-edge/cs249r_book"
+      },
+      {
+        "name": "KingKongRobotics/jumper",
+        "url": "https://github.com/KingKongRobotics/jumper"
+      }
+    ]
+  },
+  {
+    "date": "2026-10-31",
+    "theme": "smart-glasses",
+    "theme_title": "AI 智能眼镜",
+    "title": "GitHub 周报：AI 智能眼镜（2026-10-24 – 2026-10-31）",
+    "count": 6,
+    "slug": "2026-10-31-smart-glasses",
+    "picks": [
+      {
+        "name": "Mentra-Community/MentraOS",
+        "url": "https://github.com/Mentra-Community/MentraOS"
+      },
+      {
+        "name": "Turbo1123/Turbo-IO",
+        "url": "https://github.com/Turbo1123/Turbo-IO"
+      },
+      {
+        "name": "macedonga/visor",
+        "url": "https://github.com/macedonga/visor"
+      },
+      {
+        "name": "brilliantlabsAR/halo-firmware",
+        "url": "https://github.com/brilliantlabsAR/halo-firmware"
+      },
+      {
+        "name": "straff2002/OpenGlasses",
+        "url": "https://github.com/straff2002/OpenGlasses"
+      },
+      {
+        "name": "hkust-spark/xg-glass-sdk",
+        "url": "https://github.com/hkust-spark/xg-glass-sdk"
+      }
+    ]
+  },
+  {
     "date": "2026-10-25",
     "theme": "ai-agent",
     "theme_title": "AI / Agent",
