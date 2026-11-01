@@ -1,10 +1,10 @@
 {
-  "generated_at": "2026-10-31T19:01:33.602460+00:00",
+  "generated_at": "2026-11-01T03:02:30.619818+00:00",
   "theme": "robotics",
   "theme_title": "机器人",
   "theme_subtitle": "具身智能、人形机器人、ROS 生态与仿真",
-  "week_start": "2026-10-24",
-  "week_end": "2026-10-31",
+  "week_start": "2026-10-25",
+  "week_end": "2026-11-01",
   "authenticated": true,
   "candidate_count": 138,
   "repos": [
@@ -15,8 +15,8 @@
       "language": "Python",
       "source": "search",
       "html_url": "https://github.com/earthtojake/text-to-cad",
-      "stars": 24491,
-      "forks": 2346,
+      "stars": 24544,
+      "forks": 2350,
       "open_issues": 36,
       "topics": [
         "agents",
@@ -32,9 +32,9 @@
       "license": "MIT",
       "homepage": "https://www.texttocad.dev",
       "created_at": "2026-04-22T01:09:45Z",
-      "pushed_at": "2026-10-31T17:58:35Z",
+      "pushed_at": "2026-11-01T00:50:53Z",
       "archived": false,
-      "stars_this_week_estimated": 892,
+      "stars_this_week_estimated": 890,
       "score": 3
     },
     {
@@ -44,7 +44,7 @@
       "language": "Python",
       "source": "search",
       "html_url": "https://github.com/KingKongRobotics/jumper",
-      "stars": 3021,
+      "stars": 3023,
       "forks": 336,
       "open_issues": 10,
       "topics": [
@@ -57,7 +57,7 @@
       "created_at": "2026-09-28T05:56:04Z",
       "pushed_at": "2026-10-30T08:10:23Z",
       "archived": false,
-      "stars_this_week_estimated": 640,
+      "stars_this_week_estimated": 641,
       "score": 6
     },
     {
@@ -67,8 +67,8 @@
       "language": "Python",
       "source": "search",
       "html_url": "https://github.com/makerspet/oomwoo",
-      "stars": 12899,
-      "forks": 811,
+      "stars": 12906,
+      "forks": 812,
       "open_issues": 5,
       "topics": [
         "3d-printing",
@@ -101,7 +101,7 @@
       "language": "Python",
       "source": "search",
       "html_url": "https://github.com/harvard-edge/cs249r_book",
-      "stars": 29749,
+      "stars": 29751,
       "forks": 3680,
       "open_issues": 8,
       "topics": [
@@ -127,9 +127,9 @@
       "license": "NOASSERTION",
       "homepage": "https://mlsysbook.ai",
       "created_at": "2023-09-06T19:31:06Z",
-      "pushed_at": "2026-10-31T18:26:45Z",
+      "pushed_at": "2026-11-01T00:53:15Z",
       "archived": false,
-      "stars_this_week_estimated": 181,
+      "stars_this_week_estimated": 180,
       "score": 18
     },
     {
@@ -139,9 +139,9 @@
       "language": null,
       "source": "search",
       "html_url": "https://github.com/Developer-Y/cs-video-courses",
-      "stars": 84428,
-      "forks": 11595,
-      "open_issues": 7,
+      "stars": 84438,
+      "forks": 11599,
+      "open_issues": 6,
       "topics": [
         "algorithms",
         "bioinformatics",
@@ -165,7 +165,7 @@
       "license": null,
       "homepage": null,
       "created_at": "2016-10-21T17:02:11Z",
-      "pushed_at": "2026-10-27T06:39:34Z",
+      "pushed_at": "2026-10-31T22:05:30Z",
       "archived": false,
       "stars_this_week_estimated": 161,
       "score": 3
@@ -177,7 +177,7 @@
       "language": "JavaScript",
       "source": "search",
       "html_url": "https://github.com/NaiboWang/EasySpider",
-      "stars": 44758,
+      "stars": 44759,
       "forks": 5393,
       "open_issues": 278,
       "topics": [
@@ -244,8 +244,8 @@
       "language": "Python",
       "source": "search",
       "html_url": "https://github.com/commaai/openpilot",
-      "stars": 64032,
-      "forks": 11377,
+      "stars": 64035,
+      "forks": 11381,
       "open_issues": 136,
       "topics": [
         "advanced-driver-assistance-systems",
@@ -255,7 +255,7 @@
       "license": "MIT",
       "homepage": "https://comma.ai/openpilot",
       "created_at": "2016-11-24T01:33:30Z",
-      "pushed_at": "2026-10-31T09:02:19Z",
+      "pushed_at": "2026-10-31T23:42:18Z",
       "archived": false,
       "stars_this_week_estimated": 123,
       "score": 3
@@ -267,7 +267,7 @@
       "language": null,
       "source": "search",
       "html_url": "https://github.com/Octoday-Hub/Embodied-AI",
-      "stars": 2978,
+      "stars": 2981,
       "forks": 274,
       "open_issues": 1,
       "topics": [
@@ -324,9 +324,9 @@
       "language": "Python",
       "source": "search",
       "html_url": "https://github.com/RLinf/RLinf",
-      "stars": 5560,
-      "forks": 817,
-      "open_issues": 323,
+      "stars": 5561,
+      "forks": 818,
+      "open_issues": 325,
       "topics": [
         "agentic-ai",
         "embodied-ai",
@@ -350,9 +350,9 @@
       "language": "C++",
       "source": "search",
       "html_url": "https://github.com/google-deepmind/mujoco",
-      "stars": 15999,
+      "stars": 16004,
       "forks": 1910,
-      "open_issues": 295,
+      "open_issues": 297,
       "topics": [
         "mujoco",
         "physics",
@@ -361,7 +361,7 @@
       "license": "Apache-2.0",
       "homepage": "https://mujoco.org",
       "created_at": "2021-08-27T12:25:48Z",
-      "pushed_at": "2026-10-31T14:39:21Z",
+      "pushed_at": "2026-11-01T02:56:25Z",
       "archived": false,
       "stars_this_week_estimated": 59,
       "score": 5
@@ -373,7 +373,7 @@
       "language": "Python",
       "source": "search",
       "html_url": "https://github.com/zauberzeug/nicegui",
-      "stars": 16330,
+      "stars": 16329,
       "forks": 972,
       "open_issues": 40,
       "topics": [
@@ -404,7 +404,7 @@
       "language": "Python",
       "source": "search",
       "html_url": "https://github.com/AtsushiSakai/PythonRobotics",
-      "stars": 30831,
+      "stars": 30833,
       "forks": 7434,
       "open_issues": 79,
       "topics": [
@@ -440,8 +440,8 @@
       "language": "Rust",
       "source": "search",
       "html_url": "https://github.com/rerun-io/rerun",
-      "stars": 11673,
-      "forks": 890,
+      "stars": 11675,
+      "forks": 889,
       "open_issues": 1238,
       "topics": [
         "computer-vision",

@@ -3,25 +3,37 @@
     "date": "2026-10-31",
     "theme": "ai-agent",
     "theme_title": "AI / Agent",
-    "title": "GitHub 周报：AI / Agent（2026-10-24 – 2026-10-31）",
+    "title": "GitHub 周报：AI / Agent（2026-10-25 – 2026-11-01）",
     "count": 10,
     "slug": "2026-10-31-ai-agent",
     "picks": [
       {
-        "name": "cloudflare/security-audit-skill",
-        "url": "https://github.com/cloudflare/security-audit-skill"
+        "name": "Nutlope/hallmark",
+        "url": "https://github.com/Nutlope/hallmark"
       },
       {
         "name": "pbakaus/impeccable",
         "url": "https://github.com/pbakaus/impeccable"
       },
       {
+        "name": "cloudflare/security-audit-skill",
+        "url": "https://github.com/cloudflare/security-audit-skill"
+      },
+      {
         "name": "affaan-m/ECC",
         "url": "https://github.com/affaan-m/ECC"
       },
       {
+        "name": "Graphify-Labs/graphify",
+        "url": "https://github.com/Graphify-Labs/graphify"
+      },
+      {
         "name": "obra/superpowers",
         "url": "https://github.com/obra/superpowers"
+      },
+      {
+        "name": "TauricResearch/TradingAgents",
+        "url": "https://github.com/TauricResearch/TradingAgents"
       },
       {
         "name": "heygen-com/hyperframes",
@@ -32,20 +44,8 @@
         "url": "https://github.com/makecindy/cindy"
       },
       {
-        "name": "tashfeenahmed/freellmapi",
-        "url": "https://github.com/tashfeenahmed/freellmapi"
-      },
-      {
-        "name": "AgriciDaniel/claude-seo",
-        "url": "https://github.com/AgriciDaniel/claude-seo"
-      },
-      {
-        "name": "xerj-org/xerj",
-        "url": "https://github.com/xerj-org/xerj"
-      },
-      {
-        "name": "nightly-labs/openbot",
-        "url": "https://github.com/nightly-labs/openbot"
+        "name": "thedotmack/claude-mem",
+        "url": "https://github.com/thedotmack/claude-mem"
       }
     ]
   },
@@ -53,7 +53,7 @@
     "date": "2026-10-31",
     "theme": "ar-vr",
     "theme_title": "AR / VR",
-    "title": "GitHub 周报：AR / VR（2026-10-24 – 2026-10-31）",
+    "title": "GitHub 周报：AR / VR（2026-10-25 – 2026-11-01）",
     "count": 6,
     "slug": "2026-10-31-ar-vr",
     "picks": [
@@ -74,12 +74,12 @@
         "url": "https://github.com/wayvr-org/wayvr"
       },
       {
-        "name": "thefreemike31/fear-vr",
-        "url": "https://github.com/thefreemike31/fear-vr"
+        "name": "praydog/REFramework",
+        "url": "https://github.com/praydog/REFramework"
       },
       {
-        "name": "DienerTech/vectorxr",
-        "url": "https://github.com/DienerTech/vectorxr"
+        "name": "playcanvas/supersplat-viewer",
+        "url": "https://github.com/playcanvas/supersplat-viewer"
       }
     ]
   },
@@ -87,7 +87,7 @@
     "date": "2026-10-31",
     "theme": "robotics",
     "theme_title": "机器人",
-    "title": "GitHub 周报：机器人（2026-10-24 – 2026-10-31）",
+    "title": "GitHub 周报：机器人（2026-10-25 – 2026-11-01）",
     "count": 6,
     "slug": "2026-10-31-robotics",
     "picks": [
@@ -104,16 +104,16 @@
         "url": "https://github.com/RLinf/RLinf"
       },
       {
-        "name": "rerun-io/rerun",
-        "url": "https://github.com/rerun-io/rerun"
-      },
-      {
-        "name": "harvard-edge/cs249r_book",
-        "url": "https://github.com/harvard-edge/cs249r_book"
+        "name": "PhyAgentOS/PhyAgentOS-core",
+        "url": "https://github.com/PhyAgentOS/PhyAgentOS-core"
       },
       {
         "name": "KingKongRobotics/jumper",
         "url": "https://github.com/KingKongRobotics/jumper"
+      },
+      {
+        "name": "rerun-io/rerun",
+        "url": "https://github.com/rerun-io/rerun"
       }
     ]
   },
@@ -121,7 +121,7 @@
     "date": "2026-10-31",
     "theme": "smart-glasses",
     "theme_title": "AI 智能眼镜",
-    "title": "GitHub 周报：AI 智能眼镜（2026-10-24 – 2026-10-31）",
+    "title": "GitHub 周报：AI 智能眼镜（2026-10-25 – 2026-11-01）",
     "count": 6,
     "slug": "2026-10-31-smart-glasses",
     "picks": [
@@ -134,20 +134,20 @@
         "url": "https://github.com/Turbo1123/Turbo-IO"
       },
       {
-        "name": "macedonga/visor",
-        "url": "https://github.com/macedonga/visor"
+        "name": "Iam5tillLearning/OpenSource-Ai-Glasses",
+        "url": "https://github.com/Iam5tillLearning/OpenSource-Ai-Glasses"
       },
       {
-        "name": "brilliantlabsAR/halo-firmware",
-        "url": "https://github.com/brilliantlabsAR/halo-firmware"
+        "name": "macedonga/visor",
+        "url": "https://github.com/macedonga/visor"
       },
       {
         "name": "straff2002/OpenGlasses",
         "url": "https://github.com/straff2002/OpenGlasses"
       },
       {
-        "name": "hkust-spark/xg-glass-sdk",
-        "url": "https://github.com/hkust-spark/xg-glass-sdk"
+        "name": "brilliantlabsAR/halo-firmware",
+        "url": "https://github.com/brilliantlabsAR/halo-firmware"
       }
     ]
   },

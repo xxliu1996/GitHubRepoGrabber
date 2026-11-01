@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-10-31T19:00:47.901488+00:00",
+  "generated_at": "2026-11-01T03:01:36.211642+00:00",
   "theme": "ar-vr",
   "theme_title": "AR / VR",
   "theme_subtitle": "增强现实、虚拟现实、XR 引擎与空间计算",
-  "week_start": "2026-10-24",
-  "week_end": "2026-10-31",
+  "week_start": "2026-10-25",
+  "week_end": "2026-11-01",
   "authenticated": true,
-  "candidate_count": 118,
+  "candidate_count": 117,
   "repos": [
     {
       "full_name": "mrdoob/three.js",
@@ -15,9 +15,9 @@
       "language": "JavaScript",
       "source": "search",
       "html_url": "https://github.com/mrdoob/three.js",
-      "stars": 117296,
-      "forks": 36841,
-      "open_issues": 389,
+      "stars": 117316,
+      "forks": 36855,
+      "open_issues": 390,
       "topics": [
         "3d",
         "augmented-reality",
@@ -35,7 +35,7 @@
       "license": "MIT",
       "homepage": "https://threejs.org/",
       "created_at": "2010-03-23T18:58:01Z",
-      "pushed_at": "2026-10-31T13:24:40Z",
+      "pushed_at": "2026-10-31T19:45:20Z",
       "archived": false,
       "stars_this_week_estimated": 135,
       "score": 10
@@ -76,9 +76,9 @@
       "language": "Python",
       "source": "search",
       "html_url": "https://github.com/spoopyghosty0/frameport",
-      "stars": 225,
-      "forks": 26,
-      "open_issues": 122,
+      "stars": 227,
+      "forks": 27,
+      "open_issues": 125,
       "topics": [
         "compatibility-layer",
         "flet",
@@ -99,7 +99,7 @@
       "created_at": "2026-10-02T01:54:56Z",
       "pushed_at": "2026-10-26T00:15:56Z",
       "archived": false,
-      "stars_this_week_estimated": 54,
+      "stars_this_week_estimated": 52,
       "score": 9
     },
     {
@@ -146,7 +146,7 @@
       "language": "TypeScript",
       "source": "search",
       "html_url": "https://github.com/BabylonJS/Babylon.js",
-      "stars": 26251,
+      "stars": 26252,
       "forks": 3717,
       "open_issues": 45,
       "topics": [
@@ -206,7 +206,7 @@
       "html_url": "https://github.com/playcanvas/engine",
       "stars": 17172,
       "forks": 2047,
-      "open_issues": 471,
+      "open_issues": 469,
       "topics": [
         "3d-gaussian-splatting",
         "3dgs",
@@ -229,7 +229,7 @@
       "license": "MIT",
       "homepage": "https://playcanvas.com",
       "created_at": "2014-05-12T11:24:30Z",
-      "pushed_at": "2026-10-31T02:13:36Z",
+      "pushed_at": "2026-11-01T02:14:15Z",
       "archived": false,
       "stars_this_week_estimated": 26,
       "score": 6
@@ -241,9 +241,9 @@
       "language": "Rust",
       "source": "search",
       "html_url": "https://github.com/alvr-org/ALVR",
-      "stars": 8036,
+      "stars": 8037,
       "forks": 754,
-      "open_issues": 155,
+      "open_issues": 139,
       "topics": [
         "oculus-go",
         "oculus-quest",
@@ -254,9 +254,49 @@
       "license": "MIT",
       "homepage": null,
       "created_at": "2019-07-16T14:40:08Z",
-      "pushed_at": "2026-10-31T16:44:33Z",
+      "pushed_at": "2026-11-01T01:43:36Z",
       "archived": false,
       "stars_this_week_estimated": 21,
+      "score": 5
+    },
+    {
+      "full_name": "praydog/REFramework",
+      "stars_this_week": null,
+      "description": "Mod loader, scripting platform, and VR support for all RE Engine games",
+      "language": "C++",
+      "source": "search",
+      "html_url": "https://github.com/praydog/REFramework",
+      "stars": 5703,
+      "forks": 680,
+      "open_issues": 694,
+      "topics": [
+        "cmkr",
+        "cpp",
+        "dmc5",
+        "freecam",
+        "lua",
+        "modding",
+        "mods",
+        "monster-hunter-rise",
+        "monster-hunter-wilds",
+        "re-engine",
+        "re2",
+        "re3",
+        "re4",
+        "re7",
+        "re8",
+        "re9",
+        "scripting",
+        "sf6",
+        "virtual-reality",
+        "vr"
+      ],
+      "license": "MIT",
+      "homepage": "https://reframework.praydog.com/",
+      "created_at": "2019-01-31T16:17:50Z",
+      "pushed_at": "2026-11-01T01:20:46Z",
+      "archived": false,
+      "stars_this_week_estimated": 14,
       "score": 5
     },
     {
@@ -268,7 +308,7 @@
       "html_url": "https://github.com/wayvr-org/wayvr",
       "stars": 1470,
       "forks": 146,
-      "open_issues": 60,
+      "open_issues": 61,
       "topics": [
         "linux",
         "openvr",
@@ -297,7 +337,7 @@
       "source": "search",
       "html_url": "https://github.com/nagadomi/nunif",
       "stars": 3538,
-      "forks": 289,
+      "forks": 290,
       "open_issues": 42,
       "topics": [
         "super-resolution",
@@ -395,7 +435,7 @@
       "source": "search",
       "html_url": "https://github.com/playcanvas/supersplat-viewer",
       "stars": 608,
-      "forks": 163,
+      "forks": 164,
       "open_issues": 36,
       "topics": [
         "3d-gaussian-splatting",
@@ -411,34 +451,6 @@
       "archived": false,
       "stars_this_week_estimated": 7,
       "score": 3
-    },
-    {
-      "full_name": "DienerTech/vectorxr",
-      "stars_this_week": null,
-      "description": "OpenXR layer and app for VR games: Frame Generation, quad-views foveated rendering, Turbo frame pacing, head-rotation assist and stereo depth, tuned per game",
-      "language": "C++",
-      "source": "search",
-      "html_url": "https://github.com/DienerTech/vectorxr",
-      "stars": 198,
-      "forks": 9,
-      "open_issues": 48,
-      "topics": [
-        "dcs-world",
-        "flight-simulation",
-        "foveated-rendering",
-        "frame-generation",
-        "msfs",
-        "openxr",
-        "openxr-api-layer",
-        "vr"
-      ],
-      "license": "NOASSERTION",
-      "homepage": null,
-      "created_at": "2026-04-07T01:29:14Z",
-      "pushed_at": "2026-10-30T04:54:18Z",
-      "archived": false,
-      "stars_this_week_estimated": 6,
-      "score": 6
     }
   ]
 }

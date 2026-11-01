@@ -12,46 +12,46 @@
 <div class="page report" style="--accent:#3a5a7a">
   <header class="cover">
     <a class="back" href="../index.html">← 返回首页</a>
-    <h1>GitHub 周报：AR / VR（2026-10-24 – 2026-10-31）</h1>
+    <h1>GitHub 周报：AR / VR（2026-10-25 – 2026-11-01）</h1>
     <div class="meta">
       <span class="badge">AR / VR</span>
-      <span>2026-10-24 – 2026-10-31</span>
+      <span>2026-10-25 – 2026-11-01</span>
       <span>6 个项目</span>
     </div>
     <p class="subtitle">增强现实、虚拟现实、XR 引擎与空间计算</p>
   </header>
 
-  <div class="lede"><p>本周 AR / VR 赛道的研发重心呈现出「开发向 AI 借力，体验向底层要帧率」的双轨并行态势。一方面，AI 与空间计算的咬合变得越来越紧密：Google 推出轻量级的 xrblocks 模块加速多模态空间交互原型落地，开发者社区也涌现出拥有 800 余个自动化端点的 UnitySkills，让编码 Agent 能直接在 3D 编辑器里调参摆模型；另一方面，开源社区在图形底层与沉浸体验上展现出极高的极客精神：从 VectorXR 攻克四区注视点渲染与头部旋转轴心同步的性能难题，到 WayVR 将 Linux Wayland 桌面原生平移进虚拟空间，再到 ALVR 对无线串流协议的长期打磨以及经典射击游戏 F.E.A.R. 的 6DOF 完整 VR 化移植，开源力量正在底层基础设施和发烧友场景中持续拓宽 XR 的边界。</p>
+  <div class="lede"><p>本周 AR / VR 赛道的核心看点聚焦于「跨平台串流基建的深耕」与「AI 驱动的空间内容生产爆发」。随着空间计算硬件（如 Apple Vision Pro 与 Meta Quest）的技术沉淀，开发者生态正加速摆脱单一厂商平台的封闭锁喉：ALVR 与 WayVR 在 Linux 与无线串流底层持续演进，打通了从 PC 显卡到独立头显的低延迟视听通路；在开发工具链端，Google 推出的 xrblocks 让 WebXR 与生成式 AI 快速拼装成原型，Besty0728 的 Unity-Skills 首次将 LLM Agent 自动化注入工业级 Unity 编辑器，而 PlayCanvas 的 supersplat-viewer 则将 3D Gaussian Splatting（高斯泼溅）的渲染门槛大幅降低至 Web 浏览器。整体而言，开源社区正在用更开放的协议与智能工具，铺平从传统三维制作通往未来空间体验的高速公路。</p>
 </div>
 <section class="repo"><h2>1. <a href="https://github.com/Besty0728/Unity-Skills">Besty0728/Unity-Skills</a></h2>
 <blockquote>AI automation skills specifically designed for Unity</blockquote>
 <ul class="evidence"><li>⭐ 总计 1909 ⭐（本周增量未测得） ｜ C# ｜ MIT</li><li>主页：https://www.micostar.cc</li></ul>
-<p>为 Unity 深度定制的 AI 自动化技能集，向 Cursor、Claude Code、Codex 等开发环境暴露了超过 800 个 REST 自动化 API 端点。面向从事 XR、VR 游戏和 3D 交互场景开发的 Unity 工程师。它允许开发者直接用自然语言指挥 Agent 在 Unity 编辑器内批量创建物体、绑定组件、调配材质和调整灯光，将繁重的三维资产操作完全脚本化和自动化。</p>
+<p>专为 Unity 游戏引擎与 XR 内容开发设计的 AI 自动化技能扩展包，基于 REST API 将大语言模型能力深度注入 Unity 编辑器。面向游戏开发者、XR 场景设计师与技术美术。它让 AI 能够直接感知 Unity 场景层级并调用编辑器接口自动化完成 3D 资产摆放、光照烘焙、材质调整与脚本装配，大幅压缩了空间计算与 3D 场景原型制作的重复劳动。</p>
 </section>
 <section class="repo"><h2>2. <a href="https://github.com/google/xrblocks">google/xrblocks</a></h2>
 <blockquote>XR Blocks is a lightweight WebXR + AI library for rapidly prototyping advanced AI + XR experiences.</blockquote>
 <ul class="evidence"><li>⭐ 总计 503 ⭐（本周增量未测得） ｜ TypeScript ｜ Apache-2.0</li><li>主页：https://xrblocks.github.io</li></ul>
-<p>Google 开源的轻量级 WebXR + AI 原型加速库，将 Gemini 多模态模型、端侧 LiteRT 与手势意图识别封装成高内聚的 Web 组件。面向希望快速验证空间多模态人机交互的 WebXR 与前端开发人员。相比从零编写底层 3D 渲染与设备手势管线，它像搭积木一样提供即插即用的 AI 空间感知模块，大幅降低了在网页端构建沉浸式智能体验的门槛。</p>
+<p>Google 开源的轻量级 WebXR 与多模态 AI 融合开发库，主打空间智能体验的高速原型设计。面向 Web 前端开发者、XR 交互设计师与多模态应用探索者。它封装了手势追踪、环境感知空间锚点与 Gemini 多模态 API 的无缝联动模块，开发者只需几十行声明式代码即可在 Vision Pro、Quest 等支持 WebXR 的浏览器中跑通手势识别与实时空间交互。</p>
 </section>
 <section class="repo"><h2>3. <a href="https://github.com/alvr-org/ALVR">alvr-org/ALVR</a></h2>
 <blockquote>Stream VR games from your PC to your headset via Wi-Fi</blockquote>
-<ul class="evidence"><li>⭐ 总计 8036 ⭐（本周增量未测得） ｜ Rust ｜ MIT</li></ul>
-<p>老牌开源的高性能无线 PC VR 串流平台（Air Light VR），通过 Wi-Fi 将 PC 端运行的 SteamVR 图形流低延迟投射至 Meta Quest、Pico 等独立一体机。面向追求无实体线缆束缚、畅玩 PC 级 3A VR 游戏的高级玩家与极客。与封闭的专有串流方案相比，它完全开源、支持 Linux 与 Windows 双端宿主，并允许玩家精细调校视频编码格式、分辨率和注视点压缩比。</p>
+<ul class="evidence"><li>⭐ 总计 8037 ⭐（本周增量未测得） ｜ Rust ｜ MIT</li></ul>
+<p>开源界标志性的无线 VR 串流解决方案（Air Light VR），支持将 PC 端的高画质 SteamVR/OpenXR 游戏画面通过局域网 Wi-Fi 实时无线串流至一体机头显。面向追求画质自由且不愿受制于官方串流工具的 VR 玩家与跨平台硬件极客。它不仅官方支持 Meta Quest 与 PICO，更率先适配了 Apple Vision Pro 的全手势串流与 Linux 宿主环境，具备极高帧率稳定性与极细粒度的视频编码调优选项。</p>
 </section>
 <section class="repo"><h2>4. <a href="https://github.com/wayvr-org/wayvr">wayvr-org/wayvr</a></h2>
 <blockquote>Your way to enjoy VR on Linux. Run apps inside VR &amp; access your Wayland/X11 screens from Monado/WiVRn/SteamVR.</blockquote>
 <ul class="evidence"><li>⭐ 总计 1470 ⭐（本周增量未测得） ｜ Rust ｜ GPL-3.0</li><li>主页：https://wayvr.org</li></ul>
-<p>专为 Linux 桌面设计的极轻量 OpenXR / OpenVR 悬浮层（前身为 WlxOverlay-S），可将本地 Wayland / X11 桌面多屏无缝投影到 VR 空间中。面向希望在虚拟现实环境下进行沉浸式多屏办公与日常开发的 Linux 开发者。它针对低功耗和零性能干扰进行了深度优化，在与大型 VR 游戏并行运行时几乎不占 GPU 渲染资源，且支持在头显内直接点击启动 Linux 应用程序。</p>
+<p>专为 Linux 桌面环境打造的轻量级 OpenXR / OpenVR 空间计算桌面叠加层（前身为 WlxOverlay-S）。面向在 Linux 下开展日常开发与虚拟现实体验的高阶技术极客。它允许用户在保持极低 CPU 与 GPU 开销的前提下，将 Wayland 或 X11 桌面窗口悬浮投射到 Monado、WiVRn 或 SteamVR 空间中，甚至无需脱下头显即可直接在沉浸式空间中操作终端与调试代码。</p>
 </section>
-<section class="repo"><h2>5. <a href="https://github.com/thefreemike31/fear-vr">thefreemike31/fear-vr</a></h2>
-<blockquote>F.E.A.R. VR Mod by TheFreeMike — free PC VR mod for the original Steam and GOG game. Downloads, installation, motion controls, and support.</blockquote>
-<ul class="evidence"><li>⭐ 总计 188 ⭐（本周增量未测得） ｜ 无主要语言 ｜ 无许可证</li><li>主页：https://thefreemike.com/fear-vr/</li></ul>
-<p>针对经典恐怖第一人称射击游戏《F.E.A.R.》（支持 Steam 与 GOG 版本）的开源 PC VR 改造 Mod。面向喜欢复古硬核单机大作与沉浸式 6DOF 射击体验的 VR 玩家。它为 2005 年的老游戏注入了完整的双手空间位置追踪、真实物理姿态换弹、双持武器与头部独立视差，让经典重制在现代 PC VR 头显上焕发新生。</p>
+<section class="repo"><h2>5. <a href="https://github.com/praydog/REFramework">praydog/REFramework</a></h2>
+<blockquote>Mod loader, scripting platform, and VR support for all RE Engine games</blockquote>
+<ul class="evidence"><li>⭐ 总计 5703 ⭐（本周增量未测得） ｜ C++ ｜ MIT</li><li>主页：https://reframework.praydog.com/</li></ul>
+<p>业界顶级的卡普空 RE 引擎通用模组框架与注入式 6DoF VR 运行时支持平台。面向希望在 PC VR 头显中体验《生化危机》、《怪物猎人》、《龙之信条 2》等 3A 大作的硬核玩家与游戏模组开发者。它通过底层内存 Hook 与立体渲染管线注入，不仅为多款原本仅支持平面的 3A 商业大作赋予了原生级第一人称沉浸式 VR 视角与动作控制器手势追踪，还集成了强大的 Lua 运行时供社区编写更复杂的交互逻辑。</p>
 </section>
-<section class="repo"><h2>6. <a href="https://github.com/DienerTech/vectorxr">DienerTech/vectorxr</a></h2>
-<blockquote>OpenXR layer and app for VR games: Frame Generation, quad-views foveated rendering, Turbo frame pacing, head-rotation assist and stereo depth, tuned per game</blockquote>
-<ul class="evidence"><li>⭐ 总计 198 ⭐（本周增量未测得） ｜ C++ ｜ 其他许可</li></ul>
-<p>专为 Windows 平台打造的 OpenXR API 增强层与图形调优工具，支持在 VR 游戏中启用插帧（Frame Generation）与四区注视点渲染（Quad-Views Foveated Rendering）。面向重度飞行模拟、赛车竞速等极端追求高帧率画质的 VR 发烧友。它突破性地解决了注视点渲染与头部姿态偏转不同步的业界难题，让高清晰度焦点区域智能跟随玩家头部转动，显著降低 GPU 负载。</p></section>
+<section class="repo"><h2>6. <a href="https://github.com/playcanvas/supersplat-viewer">playcanvas/supersplat-viewer</a></h2>
+<blockquote>User-friendly, high-performance viewer for 3D Gaussian splats</blockquote>
+<ul class="evidence"><li>⭐ 总计 608 ⭐（本周增量未测得） ｜ TypeScript ｜ MIT</li><li>主页：https://superspl.at</li></ul>
+<p>PlayCanvas 团队打造的高性能 Web 3D 高斯泼溅（3D Gaussian Splats）轻量化查看器与运行时组件。面向 3D 摄影测量工程师、XR 场景构建者与三维视觉研究团队。它依托 WebGL/WebGPU 极致的排序与并行光栅化算法，能够在浏览器中以极其平滑的 60fps 帧率即时渲染数百万高斯粒子构成的超逼真现实空间，并提供即插即用的轻量 HTML/ZIP 离线导出方案。</p></section>
 
   <nav class="pager"><a href="2026-10-25-ar-vr.html">更早一期（2026-10-25）→</a></nav>
   <footer class="foot">

@@ -12,46 +12,46 @@
 <div class="page report" style="--accent:#7a3a5a">
   <header class="cover">
     <a class="back" href="../index.html">← 返回首页</a>
-    <h1>GitHub 周报：机器人（2026-10-24 – 2026-10-31）</h1>
+    <h1>GitHub 周报：机器人（2026-10-25 – 2026-11-01）</h1>
     <div class="meta">
       <span class="badge">机器人</span>
-      <span>2026-10-24 – 2026-10-31</span>
+      <span>2026-10-25 – 2026-11-01</span>
       <span>6 个项目</span>
     </div>
     <p class="subtitle">具身智能、人形机器人、ROS 生态与仿真</p>
   </header>
 
-  <div class="lede"><p>本周机器人赛道最显著的脉搏是「物理 AI（Physical AI）从顶层算法向具身全栈体系纵深渗透」。具身智能的发展不再仅仅停留于上层端到端大模型的学术演示，而是深入到了全流程的基础设施再造：以 RLinf 为代表的大规模强化学习基建全面打通了从仿真到百台真实物理机器人集群的自主策略演化，被 Isaac Lab 和 PyTorch 生态深度集成；专为传感器时空流设计的 Rerun 成为多模态数据对齐与实时回放的事实标准；哈佛开源教材 CS249r 则系统化梳理了从 TinyML 到具身物理系统的系统工程范式。与此同时，在硬件载体与工程落地层面，从能直接生成可量产 STEP/STL 参数化装配体的 text-to-cad，到软硬件全开源、完全本地化运行的 ROS 2 激光扫地机 oomwoo，再到 22 自由度的仿生多足机器人 Jumper，开源力量正推动具身算法与物理机械世界的深度咬合。</p>
+  <div class="lede"><p>本周机器人与具身智能赛道呈现出「软硬件双轮驱动、向物理智能底层纵深扎根」的强烈趋势。过去模型大多停留在数字仿真与静态逻辑中，而本周开源社区的触角已经伸展至从机械形态创造到端到端物理自进化的全链路：earthtojake/text-to-cad 让生成式 AI 直接接管机械结构与 DFM 可制造性检测；makerspet/oomwoo 与 KingKongRobotics/jumper 分别展示了开源家用扫地机器人与高动态多自由度仿生机器人的软硬件自制魅力；在智脑中枢与系统基建层，PhyAgentOS 提出了面向物理世界的递归自进化操作系统，RLinf 搭建起适配具身大模型的百倍加速强化学习训练底座，而 rerun-io 则稳固了多模态机器人空间传感器流的可视化基石。具身智能正快速完成从虚拟演示向真机硬件落地与自主闭环的技术蜕变。</p>
 </div>
 <section class="repo"><h2>1. <a href="https://github.com/earthtojake/text-to-cad">earthtojake/text-to-cad</a></h2>
 <blockquote>Design physical products with AI</blockquote>
-<ul class="evidence"><li>⭐ 总计 24491 ⭐（本周增量未测得） ｜ Python ｜ MIT</li><li>主页：https://www.texttocad.dev</li></ul>
-<p>专为 AI Agent 设计的本地 3D 机械与物理产品 CAD 自动化生成工具，能够直接生成 STEP、STL、GLB 和 3MF 等标准工程文件。面向硬件创业者、机器人结构设计师与工业制造工程师。与只生成不可编辑网格（mesh）的传统 3D 生成模型不同，它利用局部确定性代码和几何内核输出具有精确公差、可直接导入 SolidWorks/Fusion360 或下发 3D 打印机的工业级参数化三维实体。</p>
+<ul class="evidence"><li>⭐ 总计 24544 ⭐（本周增量未测得） ｜ Python ｜ MIT</li><li>主页：https://www.texttocad.dev</li></ul>
+<p>将生成式 AI 引入物理产品与机器人结构设计的开源 CAD 工作流插件，支持直接生成 STEP、GLB、STL 和 3MF 等工业级 3D 格式。面向机器人机械工程师、创客与智能硬件开发者。它不仅能将自然语言设计意图转化为精密的实体几何模型，还内置了面向制造的设计（DFM）合规性检查、自动化工程制图生成，并无缝对接主流 3D 打印与 CNC 数控加工服务。</p>
 </section>
 <section class="repo"><h2>2. <a href="https://github.com/makerspet/oomwoo">makerspet/oomwoo</a></h2>
 <blockquote>Open-source vacuum robot cleaner</blockquote>
-<ul class="evidence"><li>⭐ 总计 12899 ⭐（本周增量未测得） ｜ Python ｜ Apache-2.0</li><li>主页：https://oomwoo.com</li></ul>
-<p>由创客自主构建的完全开源智能扫地机器人完整软硬件项目（OOMWOO），基于树莓派、ESP32、Arduino 与 ROS 2 构建。面向机器人硬件爱好者、ROS 开发者与智能家居创客。它采用廉价 2D 激光雷达实现端侧自主 SLAM 构图与避障导航，全部机械结构均可 3D 打印，且所有数据与算法均运行于局域网本地，可无缝接入 Home Assistant，无需依赖任何商业云端。</p>
+<ul class="evidence"><li>⭐ 总计 12906 ⭐（本周增量未测得） ｜ Python ｜ Apache-2.0</li><li>主页：https://oomwoo.com</li></ul>
+<p>一套完全开源、支持用户纯手工 DIY 自制的家用扫地机器人全栈项目，基于树莓派、ESP32、Arduino 与 ROS 2 架构打造。面向机器人硬件爱好者、ROS 开发者与开源创客。它利用消费级低成本 2D 激光雷达实现全屋 SLAM 建图与自主路径规划，所有 3D 结构件均支持家用 3D 打印机制造，并能完全无缝接入 Home Assistant 实现本地局域网无云化私密控制。</p>
 </section>
 <section class="repo"><h2>3. <a href="https://github.com/RLinf/RLinf">RLinf/RLinf</a></h2>
 <blockquote>RLinf: Reinforcement Learning Infrastructure for Embodied and Agentic AI</blockquote>
-<ul class="evidence"><li>⭐ 总计 5560 ⭐（本周增量未测得） ｜ Python ｜ Apache-2.0</li><li>主页：https://rlinf.readthedocs.io/en/latest/</li></ul>
-<p>面向具身智能（Embodied AI）与物理 Agent 的大规模强化学习训练基础设施，正式入选 PyTorch 官方生态并被 NVIDIA Isaac Lab 官方采纳。面向从事端到端机器人策略学习与 VLA（视觉-语言-动作）大模型训练的科研团队与工业界实验室。它不仅统一重构了多模态模型与异构机器人硬件驱动层，还提出了群体经验学习（CEL）与在线策略蒸馏算法，支持在几十台上百台真实物理机器人集群上实现无人工干预的自主策略进化。</p>
+<ul class="evidence"><li>⭐ 总计 5561 ⭐（本周增量未测得） ｜ Python ｜ Apache-2.0</li><li>主页：https://rlinf.readthedocs.io/en/latest/</li></ul>
+<p>专为具身智能（Embodied AI）与决策智能体打造的高性能分布式强化学习系统基础设施，已开源学术论文与完整工程代码。面向机器人学习研究员、运动控制算法工程师与具身大模型团队。它针对多任务机械臂抓取、双足人形机器人步态运动等复杂连续控制场景进行了底层并行仿真与梯度更新的系统级加速，打通了从物理模拟到真机部署的端到端训练闭环。</p>
 </section>
-<section class="repo"><h2>4. <a href="https://github.com/rerun-io/rerun">rerun-io/rerun</a></h2>
-<blockquote>Visualize, query, and stream to train on multimodal robotics data.</blockquote>
-<ul class="evidence"><li>⭐ 总计 11673 ⭐（本周增量未测得） ｜ Rust ｜ Apache-2.0</li><li>主页：https://rerun.io/</li></ul>
-<p>专为计算机视觉与机器人研发设计的超高性能多模态时空数据可视化与流式回放引擎，核心采用 Rust 编写。面向算法工程师、自动驾驶研发团队与具身智能研究员。它能够以极高吞吐量实时流式采集、同步对齐并三维渲染激光雷达点云、多路相机视频、IMU 姿态传感器以及神经网络张量预测，大幅简化了复杂机器人多传感器数据的联合调试与模型训练评估。</p>
+<section class="repo"><h2>4. <a href="https://github.com/PhyAgentOS/PhyAgentOS-core">PhyAgentOS/PhyAgentOS-core</a></h2>
+<blockquote>PhyAgentOS is a Recursive Self-Improving (RSI)  physical agent operating system that enables agents to recursively self-improve through agentic workflows.</blockquote>
+<ul class="evidence"><li>⭐ 总计 2991 ⭐（本周增量未测得） ｜ Python ｜ MIT</li><li>主页：https://phy-agent-os.x-era.com/</li></ul>
+<p>专为物理实体智能体打造的递归自进化（Recursive Self-Improving, RSI）操作系统内核，致力于让机器人在物理交互中持续自我迭代。面向具身智能研发团队与自主机器人系统架构师。它通过模块化的 Agent 工作流连接机器人感知、决策、执行与环境反馈，在遇到未知物理接触或任务失败时能自主反思、修正动作策略并优化底层驱动，探索物理世界的自监督持续演进。</p>
 </section>
-<section class="repo"><h2>5. <a href="https://github.com/harvard-edge/cs249r_book">harvard-edge/cs249r_book</a></h2>
-<blockquote>Machine Learning Systems: Foundations, Scaling, Agentic AI, and Physical AI (Vols I–IV) • Harvard CS249r | https://mlsysbook.ai</blockquote>
-<ul class="evidence"><li>⭐ 总计 29749 ⭐（本周增量未测得） ｜ Python ｜ 其他许可</li><li>主页：https://mlsysbook.ai</li></ul>
-<p>哈佛大学边缘计算实验室开源的四卷本机器学习系统权威教材与课程体系（Harvard CS249r），系统性地串联起从基础算力、集群扩展到 Agent 与物理具身 AI（Physical AI）。面向深入研究机器人系统软硬件协同设计的学生、学者与系统架构师。它填补了业内缺乏端到端工程系统视角的空白，深入剖析了边缘计算设备上的微型机器学习（TinyML）、具身智能动作推理管线与实时计算拓扑。</p>
-</section>
-<section class="repo"><h2>6. <a href="https://github.com/KingKongRobotics/jumper">KingKongRobotics/jumper</a></h2>
+<section class="repo"><h2>5. <a href="https://github.com/KingKongRobotics/jumper">KingKongRobotics/jumper</a></h2>
 <blockquote>🦀 Jumper — an crab robot.</blockquote>
-<ul class="evidence"><li>⭐ 总计 3021 ⭐（本周增量未测得） ｜ Python ｜ Apache-2.0</li><li>主页：https://kingkong.tech/jumper</li></ul>
-<p>具备 22 个自由度的仿生多足螃蟹机器人硬件平台及其配套 AI 具身工具链（Jumper）。面向仿生多足动力学研究者、机器人创客与交互设计师。它打破了传统四足机器狗千篇一律的形态局限，提供了一整套基于大模型的自然语言生成外观色彩、步态动力学轨迹仿真和场景渲染管线，用户仅需一句话即可生成协调的肢体步态运动与皮肤材质。</p></section>
+<ul class="evidence"><li>⭐ 总计 3023 ⭐（本周增量未测得） ｜ Python ｜ Apache-2.0</li><li>主页：https://kingkong.tech/jumper</li></ul>
+<p>拥有 22 个活动自由度的开源仿生跳跃机械蟹机器人项目，包含完整的硬件结构图纸、步态控制固件与 AI 协同工具套件。面向仿生机器人研究者、动态运动控制工程师与高校实验室。它突破了传统多足机器人仅能缓慢爬行的限制，通过高爆发关节电机与弹力蓄能机构实现了敏捷的跳跃、全向翻滚与崎岖地形跨越，并支持用 AI 辅助外观配色与动作模态设计。</p>
+</section>
+<section class="repo"><h2>6. <a href="https://github.com/rerun-io/rerun">rerun-io/rerun</a></h2>
+<blockquote>Visualize, query, and stream to train on multimodal robotics data.</blockquote>
+<ul class="evidence"><li>⭐ 总计 11675 ⭐（本周增量未测得） ｜ Rust ｜ Apache-2.0</li><li>主页：https://rerun.io/</li></ul>
+<p>专为具身智能与物理 AI 设计的多模态机器人空间数据可视化与时空查询引擎，使用 Rust 编写核心并提供 Python/C++ 原生接口。面向自动驾驶算法团队、机器人感知工程师与物理 AI 科学家。它能以极高带宽无损流式接收并同步回放机器人运行中的激光雷达点云、深度图像、关节变换（TF 树）与传感器张量流，是机器人仿真验证与具身大模型真机数据采集排查的顶级生产力利器。</p></section>
 
   <nav class="pager"><a href="2026-10-25-robotics.html">更早一期（2026-10-25）→</a></nav>
   <footer class="foot">
