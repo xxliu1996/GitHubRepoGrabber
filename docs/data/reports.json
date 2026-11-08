@@ -1,5 +1,157 @@
 [
   {
+    "date": "2026-11-07",
+    "theme": "ai-agent",
+    "theme_title": "AI / Agent",
+    "title": "GitHub 周报：AI / Agent（2026-11-01 – 2026-11-08）",
+    "count": 10,
+    "slug": "2026-11-07-ai-agent",
+    "picks": [
+      {
+        "name": "mattpocock/skills",
+        "url": "https://github.com/mattpocock/skills"
+      },
+      {
+        "name": "NVIDIA/auto-ontology",
+        "url": "https://github.com/NVIDIA/auto-ontology"
+      },
+      {
+        "name": "pbakaus/impeccable",
+        "url": "https://github.com/pbakaus/impeccable"
+      },
+      {
+        "name": "thedotmack/claude-mem",
+        "url": "https://github.com/thedotmack/claude-mem"
+      },
+      {
+        "name": "Donchitos/Claude-Code-Game-Studios",
+        "url": "https://github.com/Donchitos/Claude-Code-Game-Studios"
+      },
+      {
+        "name": "tashfeenahmed/freellmapi",
+        "url": "https://github.com/tashfeenahmed/freellmapi"
+      },
+      {
+        "name": "anthropics/skills",
+        "url": "https://github.com/anthropics/skills"
+      },
+      {
+        "name": "AgriciDaniel/claude-seo",
+        "url": "https://github.com/AgriciDaniel/claude-seo"
+      },
+      {
+        "name": "max-sixty/worktrunk",
+        "url": "https://github.com/max-sixty/worktrunk"
+      },
+      {
+        "name": "Vincentwei1021/video-shotcraft",
+        "url": "https://github.com/Vincentwei1021/video-shotcraft"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-07",
+    "theme": "ar-vr",
+    "theme_title": "AR / VR",
+    "title": "GitHub 周报：AR / VR（2026-11-01 – 2026-11-08）",
+    "count": 6,
+    "slug": "2026-11-07-ar-vr",
+    "picks": [
+      {
+        "name": "google/three-live",
+        "url": "https://github.com/google/three-live"
+      },
+      {
+        "name": "Frametop/frametop",
+        "url": "https://github.com/Frametop/frametop"
+      },
+      {
+        "name": "google/xrblocks",
+        "url": "https://github.com/google/xrblocks"
+      },
+      {
+        "name": "natpoh/diablo2-vr-port",
+        "url": "https://github.com/natpoh/diablo2-vr-port"
+      },
+      {
+        "name": "nagadomi/nunif",
+        "url": "https://github.com/nagadomi/nunif"
+      },
+      {
+        "name": "praydog/REFramework",
+        "url": "https://github.com/praydog/REFramework"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-07",
+    "theme": "robotics",
+    "theme_title": "机器人",
+    "title": "GitHub 周报：机器人（2026-11-01 – 2026-11-08）",
+    "count": 6,
+    "slug": "2026-11-07-robotics",
+    "picks": [
+      {
+        "name": "dexmal/opendm",
+        "url": "https://github.com/dexmal/opendm"
+      },
+      {
+        "name": "commaai/openpilot",
+        "url": "https://github.com/commaai/openpilot"
+      },
+      {
+        "name": "muellerberndt/cadence",
+        "url": "https://github.com/muellerberndt/cadence"
+      },
+      {
+        "name": "google-deepmind/mujoco",
+        "url": "https://github.com/google-deepmind/mujoco"
+      },
+      {
+        "name": "harvard-edge/cs249r_book",
+        "url": "https://github.com/harvard-edge/cs249r_book"
+      },
+      {
+        "name": "AtsushiSakai/PythonRobotics",
+        "url": "https://github.com/AtsushiSakai/PythonRobotics"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-07",
+    "theme": "smart-glasses",
+    "theme_title": "AI 智能眼镜",
+    "title": "GitHub 周报：AI 智能眼镜（2026-11-01 – 2026-11-08）",
+    "count": 6,
+    "slug": "2026-11-07-smart-glasses",
+    "picks": [
+      {
+        "name": "BasedHardware/omi",
+        "url": "https://github.com/BasedHardware/omi"
+      },
+      {
+        "name": "yjeanrenaud/yj_nearbyglasses",
+        "url": "https://github.com/yjeanrenaud/yj_nearbyglasses"
+      },
+      {
+        "name": "the-momentum/open-wearables",
+        "url": "https://github.com/the-momentum/open-wearables"
+      },
+      {
+        "name": "Mentra-Community/MentraOS",
+        "url": "https://github.com/Mentra-Community/MentraOS"
+      },
+      {
+        "name": "existence-master/Sentient",
+        "url": "https://github.com/existence-master/Sentient"
+      },
+      {
+        "name": "DresdenGman/AIGlasses_for_navigation",
+        "url": "https://github.com/DresdenGman/AIGlasses_for_navigation"
+      }
+    ]
+  },
+  {
     "date": "2026-10-31",
     "theme": "ai-agent",
     "theme_title": "AI / Agent",

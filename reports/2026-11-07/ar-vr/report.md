@@ -1,0 +1,68 @@
+# GitHub 周报：AR / VR（2026-11-01 – 2026-11-08）
+
+本周 AR / VR 赛道的核心看点聚焦于「跨平台空间运行时的统一编译」与「经典内容的沉浸式空间重塑」。随着 Android XR、visionOS 与各类开源空间硬件的竞相涌现，碎片化的图形 API 正成为开发者最大的包袱：Google 推出的 three-live 以端侧 JIT 编译器打通了 Three.js 到原生空间管线的通路，xrblocks 则将多模态 AI 与 WebXR 原型开发进一步无缝缝合；Frametop 探索了无主机依赖的头显原生独立空间桌面形态；在内容与消费端，praydog/REFramework 与 natpoh/diablo2-vr-port 展现了逆向工程赋能经典 3A 与暗黑世界的硬核魅力，nunif 则借助前沿单目深度估计让普通 2D 视频零门槛转化为立体空间影像。整体生态正从分散的硬件适配走向通用的运行时与多模态空间交互新纪元。
+
+---
+
+## 1. [google/three-live](https://github.com/google/three-live)
+
+> AI-first Native 3D, CAD & spatial computing. Runtime and JIT compiler for Android (Filament & Jetpack XR), iOS/visionOS (RealityKit), and WebGL2/WebXR.
+
+- ⭐ 总计 181 ⭐（本周增量未测得） ｜ TypeScript ｜ Apache-2.0
+- 主页：https://google.github.io/three-live/
+
+基于 Rust 沙盒实现的端侧 JIT 编译器，可将 AI 生成或开发者编写的标准 Three.js 代码实时编译为 Android（Filament/Jetpack XR）、iOS/visionOS（RealityKit）及 WebXR 的原生渲染管线。面向空间计算与 AI 编程智能体，适用于跨平台 XR 应用与 3D 原型的自动化生成与快速部署。它消除了各原生平台场景图与着色器繁琐碎片化的痛点，让开发者和大模型只需维护一套通用的 Three.js 逻辑即可获得各端原生的高性能与物理交互支持。
+
+---
+
+## 2. [Frametop/frametop](https://github.com/Frametop/frametop)
+
+> Multi-screen KDE Plasma desktop and universal 3D mouse for the Valve Steam Frame (SteamVR)
+
+- ⭐ 总计 352 ⭐（本周增量未测得） ｜ Python ｜ MIT
+- 主页：https://frametop.github.io/frametop/
+
+专为 Steam Frame 头显打造的原生独立空间桌面环境，无需依赖外接 PC 即可直接在头显端运行多虚拟显示器与自由悬浮应用窗口。面向需要在 XR/VR 场景下进行沉浸式多任务办公与生产力操作的头显用户，全面支持键鼠与眼动追踪交互。区别于依赖电脑串流的传统 VR 桌面方案，它直接在头显本地运行完整桌面系统，具备轻量独立、多屏幕自由曲面排布及窗口任意悬浮的核心优势。
+
+---
+
+## 3. [google/xrblocks](https://github.com/google/xrblocks)
+
+> XR Blocks is a lightweight WebXR + AI library for rapidly prototyping advanced AI + XR experiences.
+
+- ⭐ 总计 511 ⭐（本周增量未测得） ｜ TypeScript ｜ Apache-2.0
+- 主页：https://xrblocks.github.io
+
+基于 Three.js 构建的 AI 原生轻量级 WebXR 交互库，原生适配 Android XR（Chrome）并内置桌面模拟器。主要面向 XR 与 AI 开发者，适用于快速构建融合手势识别、头部姿态、空间 UI 与环境感知的全功能交互原型。其独特创新在于原生内置面向 AI 智能体的空间感知上下文（如语义场景树、Set-of-Mark 视觉标注），能与 Gemini 等多模态大模型深度联动实现“Vibe Coding”式的交互体验快速探索。
+
+---
+
+## 4. [natpoh/diablo2-vr-port](https://github.com/natpoh/diablo2-vr-port)
+
+> D2R VR Authentic - Diablo II: Resurrected in a VR headset: first person with your body as the hero, third person, the game on your floor, and the classic view in 3D. Free mod (D2RLoader plugin).
+
+- ⭐ 总计 161 ⭐（本周增量未测得） ｜ C++ ｜ NOASSERTION
+- 主页：https://bodywalkvr.com/mods/d2r-vr
+
+基于原生 OpenXR 将《暗黑破坏神2：重制版》移植至 VR/MR 平台，支持俯瞰真 3D、混合现实地面沙盘及第一人称沉浸式体感玩法。适合拥有主流 VR/MR 设备且渴望在虚拟现实中重温经典暗黑世界的玩家。它突破了传统扁平转 VR 的简单立体视效，实现了双手武器物理碰撞阻挡、手势瞄准施法与完整的房间级 MR 沙盘交互。
+
+---
+
+## 5. [nagadomi/nunif](https://github.com/nagadomi/nunif)
+
+> Misc; latest version of waifu2x;  2D video to stereo 3D video conversion
+
+- ⭐ 总计 3551 ⭐（本周增量未测得） ｜ Python ｜ MIT
+
+集成图像超分与 2D 转 3D 工具（iw3）的深度学习多媒体框架，利用前沿单目深度估计模型将普通 2D 图像与视频批量转换为 VR 专用的左右立体（SBS 3D）格式。适合希望在 VR/MR 头显中立体化重温 2D 动漫、电影或自制视频的影音爱好者。相比传统视差算法，它紧跟 Depth Anything 等最新深度估计算法并结合轻量网格采样，兼顾高精度的景深分层与即开即用的本地批量推理体验。
+
+---
+
+## 6. [praydog/REFramework](https://github.com/praydog/REFramework)
+
+> Mod loader, scripting platform, and VR support for all RE Engine games
+
+- ⭐ 总计 5730 ⭐（本周增量未测得） ｜ C++ ｜ MIT
+- 主页：https://reframework.praydog.com/
+
+专为卡普空 RE 引擎打造的底层 Mod 框架与脚本平台，可通过 DLL 注入为《生化危机》、《鬼泣》、《怪猎》等作品提供通用的 6DOF VR 渲染与 Lua 扩展接口。适合希望以全景沉浸方式游玩卡普空大作的 PC VR 玩家以及游戏 Mod 开发者。其优势在于引擎级的通用 VR 抽象层，避免了逐款游戏重写视口管线的繁琐工作，并在生化危机多代作品中实现了原生双手动作控制器（Motion Controls）支持。

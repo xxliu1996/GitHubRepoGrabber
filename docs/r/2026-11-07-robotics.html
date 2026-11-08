@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>机器人 · 2026-11-07 · GitHub 周报</title>
+<link rel="stylesheet" href="../assets/site.css">
+
+</head>
+<body>
+
+<div class="page report" style="--accent:#7a3a5a">
+  <header class="cover">
+    <a class="back" href="../index.html">← 返回首页</a>
+    <h1>GitHub 周报：机器人（2026-11-01 – 2026-11-08）</h1>
+    <div class="meta">
+      <span class="badge">机器人</span>
+      <span>2026-11-01 – 2026-11-08</span>
+      <span>6 个项目</span>
+    </div>
+    <p class="subtitle">具身智能、人形机器人、ROS 生态与仿真</p>
+  </header>
+
+  <div class="lede"><p>本周机器人与具身智能赛道呈现出「从物理第一性原理教材、类脑持续演化到底座仿真基础设施」的深层共振。随着通用大模型向具身实体渗透，学术界与工业界正从浮躁的端到端黑盒试错转向软硬件物理极限与神经拟态机制的系统化扎根：哈佛大学开源的 cs249r_book 以“硬件与物理约束驱动系统设计”为轴线，系统性奠定了具身智能与 Physical AI 的理论与工程基石；dexmal/opendm 带来了在权威基准登顶的跨本体开放世界通用大模型；muellerberndt/cadence 更是彻底摒弃反向传播，探索让机器人边感知边在线弛豫学习的生物类脑架构；再加上 commaai/openpilot 覆盖 300+ 车型的成熟机器人自动驾驶底座、DeepMind 物理仿真中枢 MuJoCo 与经典 PythonRobotics 算法库的长期赋能，开源机器人正在理论、算法模型与物理仿真三端全面迈向体系化成熟。</p>
+</div>
+<section class="repo"><h2>1. <a href="https://github.com/dexmal/opendm">dexmal/opendm</a></h2>
+<blockquote>An Open-World Foundation Model for General-Purpose Embodied Intelligence.</blockquote>
+<ul class="evidence"><li>⭐ 总计 2361 ⭐（本周增量未测得） ｜ Python ｜ Apache-2.0</li></ul>
+<p>面向多形态机器人控制的开源视觉-语言-动作（VLA）大模型框架（核心为 DM0.5），提供完整的模型权重、训练微调和仿真评测工作流。它面向具身智能与机器人控制算法的研究与工程落地人员，适用于双臂精细协作、长时程复杂任务及动态扰动环境。相比传统 VLA 方案，它具备原生具身记忆与跨本体泛化能力，在 RoboColiseum 等多个权威具身榜单登顶，并已深度集成至 Hugging Face LeRobot 生态。</p>
+</section>
+<section class="repo"><h2>2. <a href="https://github.com/commaai/openpilot">commaai/openpilot</a></h2>
+<blockquote>openpilot is an operating system for robotics. Currently, it upgrades the driver assistance system on 300+ supported cars.</blockquote>
+<ul class="evidence"><li>⭐ 总计 64085 ⭐（本周增量未测得） ｜ Python ｜ MIT</li><li>主页：https://comma.ai/openpilot</li></ul>
+<p>开源的机器人级自动驾驶操作系统，基于车载多目视觉与端到端深度学习提供全速域自适应巡航、车道居中保持与驾驶员监控等高阶辅助驾驶功能。它主要面向希望升级私家车智驾体验的车主、改装极客以及自动驾驶开发者，目前已适配并即插即用支持 300+ 款市售主流车型。相比封闭的量产智驾系统与昂贵的工业无人车方案，它依托消费级硬件实现了媲美顶尖商业水准的辅助驾驶能力，并拥有严格的安全隔离架构与数亿英里的真实路测验证。</p>
+</section>
+<section class="repo"><h2>3. <a href="https://github.com/muellerberndt/cadence">muellerberndt/cadence</a></h2>
+<blockquote>A brain that learns from live experience. System 1 by default: perception, memory, plasticity and action. Optional System 2 for self-observation and slow corrections.</blockquote>
+<ul class="evidence"><li>⭐ 总计 570 ⭐（本周增量未测得） ｜ Python ｜ GPL-3.0</li><li>主页：https://floatingpragma.io/</li></ul>
+<p>基于动力学平衡态弛豫的类脑控制与终身学习 Python 库，完全摒弃了传统反向传播与离线训练/在线推理的生硬划分，直接利用神经元图在实时观测下的平衡态差异更新突触。它面向生物启发式 AI、神经拟态具身智能与自适应控制方向的研究者，用于构建需要边行动边持续学习的自适应“生物脑”。相比依赖批处理梯度优化的常规神经网络，它提供了基于惊奇唤醒（arousal）的主动学习、联想/情境记忆以及针对局部硬件故障在线自我修复的能力。</p>
+</section>
+<section class="repo"><h2>4. <a href="https://github.com/google-deepmind/mujoco">google-deepmind/mujoco</a></h2>
+<blockquote>Multi-Joint dynamics with Contact. A general purpose physics simulator.</blockquote>
+<ul class="evidence"><li>⭐ 总计 16110 ⭐（本周增量未测得） ｜ C++ ｜ Apache-2.0</li><li>主页：https://mujoco.org</li></ul>
+<p>Google DeepMind 维护的高性能物理引擎，采用高效接触动力学求解技术，为多关节刚体与环境交互提供高精度实时仿真环境。它主要面向机器人学、具身智能、强化学习及生物力学等领域的研究人员与算法开发者。相比传统物理引擎，它在底层采用预分配内存与极致优化的 C 架构，兼具高仿真精度与超高计算吞吐，并深度融合了 Python 科学计算生态与 WebAssembly 跨平台实时交互。</p>
+</section>
+<section class="repo"><h2>5. <a href="https://github.com/harvard-edge/cs249r_book">harvard-edge/cs249r_book</a></h2>
+<blockquote>Machine Learning Systems: Foundations, Scaling, Agentic AI, and Physical AI (Vols I–IV) • Harvard CS249r | https://mlsysbook.ai</blockquote>
+<ul class="evidence"><li>⭐ 总计 30014 ⭐（本周增量未测得） ｜ Python ｜ NOASSERTION</li><li>主页：https://mlsysbook.ai</li></ul>
+<p>哈佛大学开源的机器学习系统（ML Systems）系列教材与实践工具链，以“物理与硬件约束驱动系统架构设计”为第一性原理，系统性拆解 AI 落地全链路。它主要面向高校师生、系统工程师以及从纯算法转向边缘智能与机器人物理控制的开发者。相比常规侧重模型训练的教学资源，它贯通了单机硬件加速、分布式集群、自主 Agent 治理乃至机器人实时感知-执行闭环（Physical AI），并配套 TinyTorch 迷你框架与硬件套件实现软硬件协同实操。</p>
+</section>
+<section class="repo"><h2>6. <a href="https://github.com/AtsushiSakai/PythonRobotics">AtsushiSakai/PythonRobotics</a></h2>
+<blockquote>Python sample codes and textbook for robotics algorithms.</blockquote>
+<ul class="evidence"><li>⭐ 总计 30874 ⭐（本周增量未测得） ｜ Python ｜ NOASSERTION</li><li>主页：https://atsushisakai.github.io/PythonRobotics/</li></ul>
+<p>全面覆盖自主移动机器人核心算法（包含定位、建图、SLAM、路径规划与轨迹跟踪等）的 Python 开源实现库与在线教材。它主要面向机器人学初学者、高校师生及需要快速验证算法原型的研发人员。相比依赖庞大 ROS 体系或复杂底层 C++ 库的同类项目，它坚持极简外部依赖与高可读性原则，每种算法均配有直观的动态仿真演示，极大降低了机器人算法的学习门槛与原型验证成本。</p></section>
+
+  <nav class="pager"><a href="2026-10-31-robotics.html">更早一期（2026-10-31）→</a></nav>
+  <footer class="foot">
+    <a href="../index.html">← 返回首页</a>
+    <a href="../archive.html">历史归档</a>
+  </footer>
+</div>
+
+</body>
+</html>
