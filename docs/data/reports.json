@@ -1,5 +1,157 @@
 [
   {
+    "date": "2026-11-14",
+    "theme": "ai-agent",
+    "theme_title": "AI / Agent",
+    "title": "GitHub 周报：AI / Agent（2026-11-08 – 2026-11-15）",
+    "count": 10,
+    "slug": "2026-11-14-ai-agent",
+    "picks": [
+      {
+        "name": "meta/astryx",
+        "url": "https://github.com/meta/astryx"
+      },
+      {
+        "name": "pingdotgg/t3code",
+        "url": "https://github.com/pingdotgg/t3code"
+      },
+      {
+        "name": "morluto/rea",
+        "url": "https://github.com/morluto/rea"
+      },
+      {
+        "name": "google/elephant-goldfish-model",
+        "url": "https://github.com/google/elephant-goldfish-model"
+      },
+      {
+        "name": "vercel-labs/agent-browser",
+        "url": "https://github.com/vercel-labs/agent-browser"
+      },
+      {
+        "name": "ZhuLinsen/daily_stock_analysis",
+        "url": "https://github.com/ZhuLinsen/daily_stock_analysis"
+      },
+      {
+        "name": "GoogleChrome/modern-web-guidance-src",
+        "url": "https://github.com/GoogleChrome/modern-web-guidance-src"
+      },
+      {
+        "name": "addyosmani/agent-skills",
+        "url": "https://github.com/addyosmani/agent-skills"
+      },
+      {
+        "name": "homeassistant-ai/ha-mcp",
+        "url": "https://github.com/homeassistant-ai/ha-mcp"
+      },
+      {
+        "name": "CopilotKit/OpenBot",
+        "url": "https://github.com/CopilotKit/OpenBot"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-14",
+    "theme": "ar-vr",
+    "theme_title": "AR / VR",
+    "title": "GitHub 周报：AR / VR（2026-11-08 – 2026-11-15）",
+    "count": 6,
+    "slug": "2026-11-14-ar-vr",
+    "picks": [
+      {
+        "name": "Besty0728/Unity-Skills",
+        "url": "https://github.com/Besty0728/Unity-Skills"
+      },
+      {
+        "name": "alvr-org/ALVR",
+        "url": "https://github.com/alvr-org/ALVR"
+      },
+      {
+        "name": "google/model-viewer",
+        "url": "https://github.com/google/model-viewer"
+      },
+      {
+        "name": "thefreemike31/fear-vr",
+        "url": "https://github.com/thefreemike31/fear-vr"
+      },
+      {
+        "name": "spoopyghosty0/frameport",
+        "url": "https://github.com/spoopyghosty0/frameport"
+      },
+      {
+        "name": "bigmak94/GalaxyQuest",
+        "url": "https://github.com/bigmak94/GalaxyQuest"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-14",
+    "theme": "robotics",
+    "theme_title": "机器人",
+    "title": "GitHub 周报：机器人（2026-11-08 – 2026-11-15）",
+    "count": 6,
+    "slug": "2026-11-14-robotics",
+    "picks": [
+      {
+        "name": "newton-physics/newton",
+        "url": "https://github.com/newton-physics/newton"
+      },
+      {
+        "name": "isaac-sim/IsaacLab",
+        "url": "https://github.com/isaac-sim/IsaacLab"
+      },
+      {
+        "name": "RLinf/RLinf",
+        "url": "https://github.com/RLinf/RLinf"
+      },
+      {
+        "name": "makerspet/oomwoo",
+        "url": "https://github.com/makerspet/oomwoo"
+      },
+      {
+        "name": "dorianborian/sesame-robot",
+        "url": "https://github.com/dorianborian/sesame-robot"
+      },
+      {
+        "name": "rerun-io/rerun",
+        "url": "https://github.com/rerun-io/rerun"
+      }
+    ]
+  },
+  {
+    "date": "2026-11-14",
+    "theme": "smart-glasses",
+    "theme_title": "AI 智能眼镜",
+    "title": "GitHub 周报：AI 智能眼镜（2026-11-08 – 2026-11-15）",
+    "count": 6,
+    "slug": "2026-11-14-smart-glasses",
+    "picks": [
+      {
+        "name": "Turbo1123/Turbo-IO",
+        "url": "https://github.com/Turbo1123/Turbo-IO"
+      },
+      {
+        "name": "macedonga/visor",
+        "url": "https://github.com/macedonga/visor"
+      },
+      {
+        "name": "straff2002/OpenGlasses",
+        "url": "https://github.com/straff2002/OpenGlasses"
+      },
+      {
+        "name": "Iam5tillLearning/OpenSource-Ai-Glasses",
+        "url": "https://github.com/Iam5tillLearning/OpenSource-Ai-Glasses"
+      },
+      {
+        "name": "zjunlp/LightMem-Ego",
+        "url": "https://github.com/zjunlp/LightMem-Ego"
+      },
+      {
+        "name": "thetahealth/mirobody",
+        "url": "https://github.com/thetahealth/mirobody"
+      }
+    ]
+  },
+  {
     "date": "2026-11-07",
     "theme": "ai-agent",
     "theme_title": "AI / Agent",

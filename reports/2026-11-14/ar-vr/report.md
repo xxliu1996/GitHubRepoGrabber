@@ -1,0 +1,67 @@
+# GitHub 周报：AR / VR（2026-11-08 – 2026-11-15）
+
+本周 AR / VR 赛道整体活跃度聚焦于「XR 跨平台移植生态」与「AI 驱动的空间开发工具链」。面对硬件设备的分化与高品质沉浸内容的稀缺，社区正通过极具创意的工程手段盘活经典 IP 与既有生态：bigmak94 利用 Claude Opus 5.5 全程 AI 辅助将《超级马力欧银河》原生移植至 Meta Quest 3，开创了 3D 经典逆向移植的新范式；thefreemike31 则为经典恐怖射击神作《F.E.A.R.》带来了原生 6DOF 动捕体感射击与物理换弹体验；在硬件平台拓展方面，spoopyghosty0 推出面向 Valve Steam Frame 的一站式跨平台转译工具 FramePort，配合老牌开源无线串流神器 ALVR 全面适配 Apple Vision Pro 与 Meta Quest，大幅降低了 PC VR 内容跨端门槛；而在开发基础设施上，Besty0728 的 Unity-Skills 带来了超过 800 项针对 Unity 编辑器的 AI 自动化指令集，Google 的 model-viewer 持续演进 Web 3D/AR 标准组件，推动空间计算从游戏娱乐向更广泛的 Web 端与 AI 原生工作流延展。
+
+---
+
+## 1. [Besty0728/Unity-Skills](https://github.com/Besty0728/Unity-Skills)
+
+> AI automation skills specifically designed for Unity
+
+- ⭐ 总计 1943 ⭐（本周增量未测得） ｜ C# ｜ MIT
+- 主页：https://www.micostar.cc
+
+专为 Unity 游戏引擎与 XR 内容创作者设计的 AI 自动化技能扩展集，内置超过 870 项自动化指令。面向使用 Claude Code、Cursor 等智能体进行 3D 场景搭建、游戏逻辑编写与资产配置的 Unity 开发者。它通过 REST API 与本地编辑器进程双向通信，让模型能够直接检查场景层次结构、挂载组件、调整 Transform 属性与自动化批处理资源，大幅简化空间计算项目的搭建流程。
+
+---
+
+## 2. [alvr-org/ALVR](https://github.com/alvr-org/ALVR)
+
+> Stream VR games from your PC to your headset via Wi-Fi
+
+- ⭐ 总计 8098 ⭐（本周增量未测得） ｜ Rust ｜ MIT
+
+老牌开源的跨平台 PC VR 无线低延迟串流系统，通过 Wi-Fi 将 PC 端运行的 SteamVR 游戏与应用画面实时编码串流至独立 VR 头显。面向不愿受限于专有闭源串流软件、追求极致调优自由度与多设备兼容的 VR 玩家及开发者。系统全面采用 Rust 重构底层通信与媒体管道，不仅原生兼容 Meta Quest 全系设备，还率先登陆 Apple Vision Pro App Store，提供高帧率超低延迟的沉浸式串流体验。
+
+---
+
+## 3. [google/model-viewer](https://github.com/google/model-viewer)
+
+> Easily display interactive 3D models on the web and in AR! 
+
+- ⭐ 总计 8337 ⭐（本周增量未测得） ｜ TypeScript ｜ Apache-2.0
+- 主页：https://modelviewer.dev
+
+Google 维护的标准 Web 3D 与移动端 WebXR/AR 展示组件，支持在任何网页中用单个 HTML 自定义标签 `<model-viewer>` 渲染高保真 3D 模型。面向希望为电商、教育、设计展示等产品接入零门槛 AR 预览的前端工程师与数字孪生开发者。它内置遵循 PBR 物理渲染管线的色彩与光照标准，能在移动端无缝唤醒 Android Scene Viewer 或 iOS Quick Look，无需安装独立 App 即可让用户在真实物理空间中查看 3D 数字资产。
+
+---
+
+## 4. [thefreemike31/fear-vr](https://github.com/thefreemike31/fear-vr)
+
+> F.E.A.R. VR Mod by TheFreeMike — free PC VR mod for the original Steam and GOG game. Downloads, installation, motion controls, and support.
+
+- ⭐ 总计 209 ⭐（本周增量未测得） ｜ C++ ｜ NOASSERTION
+- 主页：https://thefreemike.com/fear-vr/
+
+为经典第一人称心理恐怖射击游戏《F.E.A.R.》（极度恐慌）打造的完整 PC VR 移植模组，兼容 Steam 与 GOG 原版游戏。面向追求硬核恐怖沉浸感、渴望重温 PC 经典名作的 VR 玩家与模组发烧友。该模组为原版引擎逆向注入了原生 6DOF 双手动作控制器追踪、双手握枪交互、物理手动换弹、身体动作校准与全套舒适度调节选项，使二十年前的经典神作在现代 VR 头显中焕发新生。
+
+---
+
+## 5. [spoopyghosty0/frameport](https://github.com/spoopyghosty0/frameport)
+
+> Port games to work with the Steam Frame
+
+- ⭐ 总计 266 ⭐（本周增量未测得） ｜ Python ｜ GPL-3.0
+- 主页：https://frameport.app/
+
+专为 Valve Steam Frame 头戴设备开发的游戏与应用自动化转译部署工具链。面向希望将 Meta Quest 原生游戏、常规 Android 应用、Linux 桌面应用及 PC VR 内容移植至 Steam Frame 平台的玩家与独立开发者。它通过一行终端命令即可完成设备底层的环境初始化，内置自动化依赖补丁、APK 逆向修补与动态库注入逻辑，并能自动将转译后的游戏与精美封面资产注册至 Steam 游戏库。
+
+---
+
+## 6. [bigmak94/GalaxyQuest](https://github.com/bigmak94/GalaxyQuest)
+
+> GalaxyQuest: Super Mario Galaxy in VR on Meta Quest 3, a native port built on the Petari decompilation. Bring your own game files. 100% made by AI (Claude Opus 5.5 in Claude Code).
+
+- ⭐ 总计 133 ⭐（本周增量未测得） ｜ C++ ｜ Unlicense
+
+基于 Petari 社区逆向反编译成果、全程由 Claude Opus 5.5 在 Claude Code 中编写生成的《超级马力欧银河》Meta Quest 原生 6DOF VR 移植项目。面向拥有原版游戏镜像、渴望在全景空间中探索重力与球形行星玩法的 VR 极客与任天堂游戏玩家。该项目将原本属于平面的经典箱庭冒险转变为置身其中的立体微缩景观，行星仿佛漂浮在手臂可触的距离，玩家能探身观察每个转角并使用 6DOF 手柄直接发射星之碎片。
